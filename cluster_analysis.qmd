@@ -1,0 +1,91 @@
+---
+title: "Formulating Regional Typologies"
+author: "Dony Indiarto, Mohamad Nugraha"
+affiliation: "CIFOR-ICRAF Indonesia"
+format: revealjs
+editor: visual
+---
+
+## Agenda
+
+1. Understanding the Regional Typologies
+2. Methodology and Steps
+3. Case Studies and Examples
+4. Closing Remarks
+
+------------------------------------------------------------------------
+
+## What are Regional Typologies?
+
+-   **Definition**
+    -   A categorization of geographical areas based on shared features.
+    -   Features often include quantifiable socio-economic indicators and environmental factors.
+    
+------------------------------------------------------------------------
+
+## Why are Regional Typologies Important?
+
+- Regions vary in socio-economic and environmental aspects.
+- Typologies simplify this by creating manageable groups.
+- They facilitate comparisons and targeted management.
+    
+------------------------------------------------------------------------
+## How Do Typology and Regional Indexes Differ? {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Urban-rural typology
+<!-- ![Urban-rural typology for NUTS level 3 regions](image/nuts.png) -->
+:::
+### Regional Index
+::: {.column width="50%"}
+<!-- ![Global Food Security Index](image/gfsi.png) -->
+:::
+
+::::
+
+
+------------------------------------------------------------------------
+
+## How Do Typology and Regional Indexes Differ? {.smaller}
+
+| Criteria                  | Regional Typologies                                                                                 | Regional Index                                                                               |
+|----------------|--------------------------------|-------------------------|
+| **What it Is**            | Categorises areas based on similar socio-economic, environmental, or institutional characteristics. | A single, composite measure that quantifies the level of vulnerability to a specific threat. |
+| **Outcome**               | Classifications like "high-income urban area" or "low-resource rural area."                         | Numerical score ranking areas from low to high vulnerability.                                |
+| **Use-Case**              | Tailoring policies or interventions to different types of areas.                                    | Prioritising aid, resources, or interventions based on vulnerability.                        |
+| **Caveats**               | Can oversimplify complexities; subject to analyst bias.                                             | May not capture the full situation; choice of indicators and weightings can be arbitrary.    |
+| **Complementary Aspects** | Provides rich, contextual information.                                                              | Pinpoints areas needing immediate attention.                                                 |
+
+------------------------------------------------------------------------
+
+## How Do We Make Regional Typologies?
+
+-   Formulate Objectives
+-   Identify  Data requirement and availability
+-   Data pre-processing
+-   Variable selection and PCA
+-   Cluster analysis and validation
+-   Interpretation and comparisons
+
+------------------------------------------------------------------------
+
+## Slide 6: Case Studies and Examples
+
+-   **Previous Projects**
+    -   West Kalimantan
+    -   South Sumatra
+-   **Focus: South Sulawesi**
+    -   Scope, Objectives, and Key Findings
+
+------------------------------------------------------------------------
+
+## Slide 7: Summary & Open Question
+
+-   **Summary**
+    -   Importance of Cluster Analysis in regional planning.
+-   **Open Question**
+    -   What would you like to learn from a cluster analysis for your specific context?
+
+------------------------------------------------------------------------
