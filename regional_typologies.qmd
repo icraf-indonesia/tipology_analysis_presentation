@@ -26,6 +26,7 @@ editor: visual
 
 ## Application of Typology in the Development Masterplan for Integrated Land and Seascape
 
+::: {style="font-size:26px"}
 - The development of an integrated land and sea masterplan (green economic growth) is structured around planning units.
 
 - Each planning unit is defined by a range of specific characteristics, derived from multiple layers of spatial data.
@@ -35,6 +36,7 @@ editor: visual
 - The planning process involves a continuous flow of data and information from macro to meso to micro levels, and vice versa.
 
 - The masterplan will include a range of tailored strategies and on-site interventions, reflecting the specific needs of each planning unit.
+:::
 ------------------------------------------------------------------------
 
 ## What are Regional Typologies?
