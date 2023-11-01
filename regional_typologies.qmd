@@ -294,7 +294,23 @@ editor: visual
 
 ### Area Composition
 
+| Cluster | Name            | Total sub district | Area (ha) | \% Area |
+|---------|-----------------|--------------------|-----------|---------|
+| 1       | Islands         | 17                 | 126,847   | 3%      |
+| 2       | Sub-rural areas | 65                 | 1,588,345 | 35%     |
+| 3       | Urban areas     | 36                 | 145,226   | 3%      |
+| 4       | Sub-urban areas | 111                | 1,162,856 | 26%     |
+| 5       | Rural areas     | 77                 | 1,414,487 | 31%     |
+
 ### Demographic Composition
+
+| Cluster | Name            | Families | \% Families | Families density (KK/ha) |
+|---------|-----------------|----------|-------------|--------------------------|
+| 1       | Islands         | 67,717   | 0.03        | 53%                      |
+| 2       | Sub-rural areas | 457,271  | 0.19        | 29%                      |
+| 3       | Urban areas     | 561,495  | 0.24        | 387%                     |
+| 4       | Sub-urban areas | 994,481  | 0.42        | 86%                      |
+| 5       | Rural areas     | 261,832  | 0.11        | 19%                      |
 :::
 
 ------------------------------------------------------------------------
