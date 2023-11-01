@@ -10,7 +10,6 @@ format:
   revealjs:
     theme: simple
     scrollable: true
-    embed-resources: true
 reference-location: document
 editor: visual
 ---
@@ -24,7 +23,7 @@ editor: visual
 
 -----------------------------------------------------------------------
 
-## Application of Typology in the Development Masterplan for Integrated Land and Seascape
+## Application of Typology in the Development Masterplan for Integrated Land and Seascape {.smaller}
 
 ::: {style="font-size:26px"}
 - The development of an integrated land and sea masterplan (green economic growth) is structured around planning units.
@@ -61,13 +60,13 @@ editor: visual
 ::: {.column width="50%"}
 **Typology**
 
-![Urban-rural typology for NUTS level 3 regions](image/nuts.png){height="400"}
+[![Urban-rural typology for NUTS level 3 regions](image/nuts.png){height="400" fig-align="center"}](https://ec.europa.eu/eurostat/cache/RCI/#?vis=urbanrural.urb_typology&lang=en)
 :::
 
 ::: {.column width="50%"}
 **Index**
 
-![Global Food Security Index](image/gfsi.png){height="400"}
+[![Global Food Security Index](image/gfsi.png){height="400" fig-align="center"}](https://impact.economist.com/sustainability/project/food-security-index/explore-countries)
 :::
 :::
 
@@ -188,11 +187,23 @@ editor: visual
 | 50  | Wet months                                              | WORLDCLIM 2.1                                           | months         |
 
 ### A sample of ready-to-process data
+```{r a sample of data }
+#| warning: false
+#| message: false
+```
 
 
 ### PCA Summary
+```{r Map}
+#| warning: false
+#| message: false
+```
 
 ### K-means cluster
+```{r K-means cluster}
+#| warning: false
+#| message: false
+```
 :::
 
 ------------------------------------------------------------------------
@@ -205,6 +216,103 @@ editor: visual
 
 ::: {.panel-tabset style="font-size:16px"}
 ### Map
+```{r Map}
+#| warning: false
+#| message: false
+library(plotly)
+library(leaflet)
+library(sf)
+library(dplyr)
+
+clusters_sulsel <- st_read("data/tipologi_5_kelas_sulsel.shp" , quiet = TRUE)
+cluster_lookup <- readr::read_csv("data/cluster_names.csv")
+
+# Constructing the label string first
+clusters_sulsel$label_content <- with(
+  clusters_sulsel,
+  paste0(
+    "<strong>Kabupaten:</strong> ",
+    nmkab,
+    "<br>",
+    "<strong>Kecamatan:</strong> ",
+    nmkec,
+    "<br>",
+    "<strong>Cluster:</strong> ",
+    cluster
+  )
+) |> lapply(htmltools::HTML)
+
+clusters_sulsel_with_name <- clusters_sulsel |> right_join(cluster_lookup, by = "cluster")
+
+pal <-
+  colorFactor(palette = "Set1", domain = clusters_sulsel_with_name$name)
+
+
+
+# Create the leaflet map with HTML-rendered labels
+leaflet(clusters_sulsel_with_name) |>
+  addProviderTiles(providers$OpenStreetMap) |>
+  addPolygons(
+    fillColor = ~ pal(name),
+    weight = 0.5,
+    opacity = 1,
+    color = "white",
+    dashArray = "3",
+    fillOpacity = 0.7,
+    highlight = highlightOptions(
+      weight = 5,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.7,
+      bringToFront = TRUE
+    ),
+    label = ~ label_content,
+    labelOptions = labelOptions(noHide = FALSE,
+                                direction = 'auto')
+  ) |>
+  addLegend(pal = pal,
+            values = ~ name,
+            title = "Typology")
+
+```
+
+### Area Composition
+
+```{r komposisi kecamatan}
+#| warning: false
+#| message: false
+source("R/functions.R")
+intisari_desk_kec <- readr::read_csv("data/interpretasi_tipologi_sulsel.csv") |> 
+  dplyr::mutate(`Kepadatan RT` = `Luas (Ha)`/`Rumah Tangga`)
+
+fig_luas <- intisari_desk_kec |> 
+  filter(Nama != "Total") |> 
+  plot_ly(labels = ~Nama, values = ~`Luas (Ha)`) |> 
+  add_pie(hole = 0.6) |> 
+  layout(title = "Area Composition (Ha)",
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))  
+
+# Show the plot
+fig_luas
+```
+
+
+### Demographic Composition
+
+```{r donat RT}
+# Create the plot for Jumlah RT
+fig_RT <- intisari_desk_kec |> 
+  filter(Nama != "Total") |> 
+  plot_ly(labels = ~Nama, values = ~`Rumah Tangga`) |> 
+  add_pie(hole = 0.6) |> 
+  layout(title = "Number of Households",
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))  
+
+# Show the plot
+fig_RT
+```
 
 ### **1. Islands**
 
@@ -306,25 +414,8 @@ editor: visual
 
 -   Heavily reliant on food supplies from other regions.
 
-### Area Composition
 
-| Cluster | Name            | Total sub district | Area (ha) | \% Area |
-|---------|-----------------|--------------------|-----------|---------|
-| 1       | Islands         | 17                 | 126,847   | 3%      |
-| 2       | Sub-rural areas | 65                 | 1,588,345 | 35%     |
-| 3       | Urban areas     | 36                 | 145,226   | 3%      |
-| 4       | Sub-urban areas | 111                | 1,162,856 | 26%     |
-| 5       | Rural areas     | 77                 | 1,414,487 | 31%     |
 
-### Demographic Composition
-
-| Cluster | Name            | Families | \% Families | Families density (KK/ha) |
-|---------|-----------------|----------|-------------|--------------------------|
-| 1       | Islands         | 67,717   | 0.03        | 53%                      |
-| 2       | Sub-rural areas | 457,271  | 0.19        | 29%                      |
-| 3       | Urban areas     | 561,495  | 0.24        | 387%                     |
-| 4       | Sub-urban areas | 994,481  | 0.42        | 86%                      |
-| 5       | Rural areas     | 261,832  | 0.11        | 19%                      |
 :::
 
 ------------------------------------------------------------------------
