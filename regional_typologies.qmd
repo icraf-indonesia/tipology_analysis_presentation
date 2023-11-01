@@ -16,27 +16,29 @@ editor: visual
 ---
 
 ## Agenda
+
 0.  Background Context
 1.  Understanding the Regional Typologies
 2.  Methodology
 3.  Case Studies
 4.  Closing Remarks
 
------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 ## Application of Typology in the Development Masterplan for Integrated Land and Seascape
 
 ::: {style="font-size:26px"}
-- The development of an integrated land and sea masterplan (green economic growth) is structured around planning units.
+-   The development of an integrated land and sea masterplan (green economic growth) is structured around planning units.
 
-- Each planning unit is defined by a range of specific characteristics, derived from multiple layers of spatial data.
+-   Each planning unit is defined by a range of specific characteristics, derived from multiple layers of spatial data.
 
-- The concept of "Regional Typology" identifies common characteristics—whether in villages, districts, or special units—that guide the formulation of both planning units and strategy or intervention recommendations.
+-   The concept of "Regional Typology" identifies common characteristics---whether in villages, districts, or special units---that guide the formulation of both planning units and strategy or intervention recommendations.
 
-- The planning process involves a continuous flow of data and information from macro to meso to micro levels, and vice versa.
+-   The planning process involves a continuous flow of data and information from macro to meso to micro levels, and vice versa.
 
-- The masterplan will include a range of tailored strategies and on-site interventions, reflecting the specific needs of each planning unit.
+-   The masterplan will include a range of tailored strategies and on-site interventions, reflecting the specific needs of each planning unit.
 :::
+
 ------------------------------------------------------------------------
 
 ## What are Regional Typologies?
@@ -77,7 +79,7 @@ editor: visual
 
 ::: {style="font-size:20px"}
 | Criteria                  | Regional Typologies                                                                                 | Regional Indexes                                                                          |
-|------------------|------------------------------|------------------------|
+|---------------------------|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | **What it is**            | Categorises areas based on similar socio-economic, environmental, or institutional characteristics. | A single, composite measure that quantifies the level of vulnerability to a threat.       |
 | **Outcome**               | Classifications like "urban area" or "rural area."                                                  | Numerical score ranking areas from low to high vulnerability.                             |
 | **Use-case**              | Tailoring policies or interventions to different types of areas.                                    | Prioritising aid, resources, or interventions based on the ranking                        |
@@ -134,61 +136,61 @@ editor: visual
 **Unit of Analysis**: Sub-district (Kecamatan)
 
 ### List of collected features
-| No  | Feature                                                    | Source                                                  | Unit           |
-|---------------|-------------------------|------------------|---------------|
-| 1   | Distance to plantation                                  | Land cover map 2020, MoEF                               | m              |
-| 2   | Distance to road                                        | BIG                                                     | m              |
-| 3   | Distance to commodity processing factory                | ICRAF (2016)                                            | m              |
-| 4   | Distance to plantation concession                       | South Sulawesi Government                               | m              |
-| 5   | Distance to forest                                      | Land cover map 2020, MoEF                               | m              |
-| 6   | Distance to river                                       | BIG                                                     | m              |
-| 7   | Distance to burned area                                 | MoEF, 2019                                              | m              |
-| 8   | Percentage of agricultural area (small holder)          | Land cover map 2020, MoEF                               | \%             |
-| 9   | Percentage of plantation area per sub-district          | Land cover map 2020, MoEF                               | \%             |
-| 10  | Percentage of forested area in the sub-district         | Land cover map 2020, MoEF                               | \%             |
-| 11  | Percentage of shrubland in the sub-district             | Land cover map 2020, MoEF                               | \%             |
-| 12  | Percentage of water area compared to sub-district area  | Land cover map 2020, MoEF                               | \%             |
-| 13  | Distance to deforestation                               | Land cover map 2020, MoEF                               | m              |
-| 14  | Deforestation area size                                 | Land cover map 2020, MoEF                               | km^2^            |
-| 15  | Arable land                                         | Land cover map 2020, MoEF                               | % |
-| 16  | Erosion                                                 | RUSLE                                                   | t ha^-1^ yr^-1^    |
-| 17  | Flood hazard index                                      | RBI BNPB                                                | index value    |
-| 18  | Land slide hazard index                                 | RBI BNPB                                                | index value    |
-| 19  | Aridity index                                           | WORLDCLIM 2.1                                           | index value    |
-| 20  | Number of Households | Potensi desa BPS 2019                                   | number         |
-| 21  | Electrification ratio                                   | Potensi desa BPS 2019                                   | \%         |
-| 22  | High school                                        | Potensi desa BPS 2019                                   | number         |
-| 23  | University                                         | Potensi desa BPS 2019                                   | number         |
-| 24  | Hospital                                           | Potensi desa BPS 2019                                   | number         |
-| 25  | Health facility                                    | Potensi desa BPS 2019                                   | number         |
-| 26  | Market                                             | Potensi desa BPS 2019                                   | number         |
-| 27  | Minimarket                                         | Potensi desa BPS 2019                                   | number         |
-| 28  | Landslide events 2018-2019                              | Potensi desa BPS 2019                                   | events/year    |
-| 29  | Landslide fatalities 2018-2019                          | Potensi desa BPS 2019                                   | people/year    |
-| 30  | Flood events 2018-2019                                  | Potensi desa BPS 2019                                   | events/year    |
-| 31  | Flood fatalities 2018-2019                              | Potensi desa BPS 2019                                   | people/year    |
-| 32  | Flash flood events 2018-2019                            | Potensi desa BPS 2019                                   | events/year    |
-| 33  | Flash flood fatalities 2018-2019                        | Potensi desa BPS 2019                                   | people/year    |
-| 34  | Land and forest fire events 2018-2019                   | Potensi desa BPS 2019                                   | events/year    |
-| 35  | Land and forest fire fatalities 2018-2019               | Potensi desa BPS 2019                                   | people/year    |
-| 36  | Land drought events 2018-2019                           | Potensi desa BPS 2019                                   | events/year    |
-| 37  | Land drought fatalities 2018-2019                       | Potensi desa BPS 2019                                   | people/year    |
-| 38  | Natural disaster early warning systems                  | Potensi desa BPS 2019                                   | Number         |
-| 39  | Percentage natural disaster early warning systems       | Potensi desa BPS 2019                                   | \%             |
-| 40  | Reservoir                                          | Potensi desa BPS 2019                                   | number         |
-| 41  | Village markets                                | Potensi desa BPS 2019                                   | number         |
-| 42  | Number of people suffering from malnutrition 2018       | Potensi desa BPS 2019                                   | individuals         |
-| 43  | Annual mean temperature                                 | WORLDCLIM 2.1                                           | °C            |
-| 44  | Temperature changes                                     | WORLDCLIM 2.1 & MRI-ESM2-0 SSP 245 2050s                                          | °C            |
-| 45  | Annual mean precipitation                               | WORLDCLIM 2.1                                          | mm             |
-| 46  | Precipitation changes                                   | WORLDCLIM 2.1 & MRI-ESM2-0 SSP 245 2050s                                        | mm             |
-| 47  | Households in the lowest 40% of the economic bracket                             | National Team for the Acceleration of Poverty Reduction | \%         |
-| 48  | Distance to irrigated land                              | Ministry of Public Works and Housing                    | m              |
-| 49  | Percentage of irrigated land                            | Ministry of Public Works and Housing                    | \%             |
-| 50  | Wet months                                              | WORLDCLIM 2.1                                           | months         |
+
+| No  | Feature                                                | Source                                                  | Unit            |
+|-----|--------------------------------------------------------|---------------------------------------------------------|-----------------|
+| 1   | Distance to plantation                                 | Land cover map 2020, MoEF                               | m               |
+| 2   | Distance to road                                       | BIG                                                     | m               |
+| 3   | Distance to commodity processing factory               | ICRAF (2016)                                            | m               |
+| 4   | Distance to plantation concession                      | South Sulawesi Government                               | m               |
+| 5   | Distance to forest                                     | Land cover map 2020, MoEF                               | m               |
+| 6   | Distance to river                                      | BIG                                                     | m               |
+| 7   | Distance to burned area                                | MoEF, 2019                                              | m               |
+| 8   | Percentage of agricultural area (small holder)         | Land cover map 2020, MoEF                               | \%              |
+| 9   | Percentage of plantation area per sub-district         | Land cover map 2020, MoEF                               | \%              |
+| 10  | Percentage of forested area in the sub-district        | Land cover map 2020, MoEF                               | \%              |
+| 11  | Percentage of shrubland in the sub-district            | Land cover map 2020, MoEF                               | \%              |
+| 12  | Percentage of water area compared to sub-district area | Land cover map 2020, MoEF                               | \%              |
+| 13  | Distance to deforestation                              | Land cover map 2020, MoEF                               | m               |
+| 14  | Deforestation area size                                | Land cover map 2020, MoEF                               | km^2^           |
+| 15  | Arable land                                            | Land cover map 2020, MoEF                               | \%              |
+| 16  | Erosion                                                | RUSLE                                                   | t ha^-1^ yr^-1^ |
+| 17  | Flood hazard index                                     | RBI BNPB                                                | index value     |
+| 18  | Land slide hazard index                                | RBI BNPB                                                | index value     |
+| 19  | Aridity index                                          | WORLDCLIM 2.1                                           | index value     |
+| 20  | Number of Households                                   | Potensi desa BPS 2019                                   | number          |
+| 21  | Electrification ratio                                  | Potensi desa BPS 2019                                   | \%              |
+| 22  | High school                                            | Potensi desa BPS 2019                                   | number          |
+| 23  | University                                             | Potensi desa BPS 2019                                   | number          |
+| 24  | Hospital                                               | Potensi desa BPS 2019                                   | number          |
+| 25  | Health facility                                        | Potensi desa BPS 2019                                   | number          |
+| 26  | Market                                                 | Potensi desa BPS 2019                                   | number          |
+| 27  | Minimarket                                             | Potensi desa BPS 2019                                   | number          |
+| 28  | Landslide events 2018-2019                             | Potensi desa BPS 2019                                   | events/year     |
+| 29  | Landslide fatalities 2018-2019                         | Potensi desa BPS 2019                                   | people/year     |
+| 30  | Flood events 2018-2019                                 | Potensi desa BPS 2019                                   | events/year     |
+| 31  | Flood fatalities 2018-2019                             | Potensi desa BPS 2019                                   | people/year     |
+| 32  | Flash flood events 2018-2019                           | Potensi desa BPS 2019                                   | events/year     |
+| 33  | Flash flood fatalities 2018-2019                       | Potensi desa BPS 2019                                   | people/year     |
+| 34  | Land and forest fire events 2018-2019                  | Potensi desa BPS 2019                                   | events/year     |
+| 35  | Land and forest fire fatalities 2018-2019              | Potensi desa BPS 2019                                   | people/year     |
+| 36  | Land drought events 2018-2019                          | Potensi desa BPS 2019                                   | events/year     |
+| 37  | Land drought fatalities 2018-2019                      | Potensi desa BPS 2019                                   | people/year     |
+| 38  | Natural disaster early warning systems                 | Potensi desa BPS 2019                                   | Number          |
+| 39  | Percentage natural disaster early warning systems      | Potensi desa BPS 2019                                   | \%              |
+| 40  | Reservoir                                              | Potensi desa BPS 2019                                   | number          |
+| 41  | Village markets                                        | Potensi desa BPS 2019                                   | number          |
+| 42  | Number of people suffering from malnutrition 2018      | Potensi desa BPS 2019                                   | individuals     |
+| 43  | Annual mean temperature                                | WORLDCLIM 2.1                                           | °C              |
+| 44  | Temperature changes                                    | WORLDCLIM 2.1 & MRI-ESM2-0 SSP 245 2050s                | °C              |
+| 45  | Annual mean precipitation                              | WORLDCLIM 2.1                                           | mm              |
+| 46  | Precipitation changes                                  | WORLDCLIM 2.1 & MRI-ESM2-0 SSP 245 2050s                | mm              |
+| 47  | Households in the lowest 40% of the economic bracket   | National Team for the Acceleration of Poverty Reduction | \%              |
+| 48  | Distance to irrigated land                             | Ministry of Public Works and Housing                    | m               |
+| 49  | Percentage of irrigated land                           | Ministry of Public Works and Housing                    | \%              |
+| 50  | Wet months                                             | WORLDCLIM 2.1                                           | months          |
 
 ### A sample of ready-to-process data
-
 
 ### PCA Summary
 
@@ -205,6 +207,8 @@ editor: visual
 
 ::: {.panel-tabset style="font-size:16px"}
 ### Map
+
+![](image/5cluster.png){height="450" fig-align="center"}
 
 ### **1. Islands**
 
@@ -355,7 +359,7 @@ editor: visual
 ### Source of Data
 
 | No  | Category                      | Spatially explicit variables                              | References                                                                   |
-|------------------|------------------|------------------|--------------------|
+|-----|-------------------------------|-----------------------------------------------------------|------------------------------------------------------------------------------|
 | 1   | Distance to infrastructure    | Distance to oil palm plantation                           | Landcover map 2017 from MoEF                                                 |
 | 2   | Distance to infrastructure    | Distance to roads                                         | BIG                                                                          |
 | 3   | Distance to infrastructure    | Distance to a rubber factory                              | ICRAF                                                                        |
@@ -410,7 +414,7 @@ editor: visual
 ### Typology-Based Intervention
 
 | **Typology** | **R.3.1 Establishment of Peatland Stewardship Village**                                                                                                                                                                                                               | **R.3.2 Enhancing Livelihood Capacity**                                                                                                          | **R.3.3 Development of Alternative Commodities and Livelihood Sources**                                                             |
-|------------------|------------------|------------------|--------------------|
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | **1**        | \- Community awareness about the importance of the peat ecosystem, collaborating with district and provincial governments. <br><br> - Activities of the Peatland Stewardship Village aimed at increasing income and creating sources of livelihood for the community. | Conducted in synergy with district/city governments.                                                                                             | Directed at non-agricultural livelihood sources (off-farm). Local industries that exist need support.                               |
 | **2**        | Peatland Stewardship Village is executed in an integrated manner in partnership with HTI companies and palm oil plantations. The goal is to enhance community access.                                                                                                 | Strengthening farmers' livelihoods to protect the remaining peat ecosystems. Formulation of alternative livelihood sources.                      | Livelihood sources oriented towards peat-friendly agriculture, mixed plantations combined with non-agricultural livelihood sources. |
 | **3**        | Peatland Stewardship Village is oriented towards fire prevention; conducted in an integrated manner in partnership with HTI companies and palm oil plantations.                                                                                                       | Strengthening farmers' livelihoods through partnerships with plantation and HTI companies. Livelihoods aimed at forest and land fire prevention. | Livelihood sources oriented towards peat-friendly agriculture and plantations combined with fisheries and livestock.                |
