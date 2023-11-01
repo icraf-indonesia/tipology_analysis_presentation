@@ -34,7 +34,7 @@ editor: visual
 ## Why are Regional Typologies Useful?
 
 -   Regions vary in socio-economic and environmental aspects.
--   Typologies simplify this by creating manageable groups.
+-   Typologies group regions with similar characteristics, making them more manageable.
 -   They facilitate comparisons and targeted management.
 
 ------------------------------------------------------------------------
