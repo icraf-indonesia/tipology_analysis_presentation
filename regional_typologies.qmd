@@ -61,7 +61,7 @@ editor: visual
 
 ::: {style="font-size:20px"}
 | Criteria                  | Regional Typologies                                                                                 | Regional Indexes                                                                          |
-|------------------|------------------------------|------------------------|
+|---------------------------|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | **What it is**            | Categorises areas based on similar socio-economic, environmental, or institutional characteristics. | A single, composite measure that quantifies the level of vulnerability to a threat.       |
 | **Outcome**               | Classifications like "urban area" or "rural area."                                                  | Numerical score ranking areas from low to high vulnerability.                             |
 | **Use-case**              | Tailoring policies or interventions to different types of areas.                                    | Prioritising aid, resources, or interventions based on the ranking                        |
@@ -270,7 +270,7 @@ editor: visual
 ### Source of Data
 
 | No  | Category                      | Spatially explicit variables                              | References                                                                   |
-|----------------|----------------|-----------------|------------------------|
+|-----|-------------------------------|-----------------------------------------------------------|------------------------------------------------------------------------------|
 | 1   | Distance to infrastructure    | Distance to oil palm plantation                           | Landcover map 2017 from MoEF                                                 |
 | 2   | Distance to infrastructure    | Distance to roads                                         | BIG                                                                          |
 | 3   | Distance to infrastructure    | Distance to a rubber factory                              | ICRAF                                                                        |
@@ -325,7 +325,7 @@ editor: visual
 ### Typology-Based Intervention
 
 | **Typology** | **R.3.1 Establishment of Peatland Stewardship Village**                                                                                                                                                                                                               | **R.3.2 Enhancing Livelihood Capacity**                                                                                                          | **R.3.3 Development of Alternative Commodities and Livelihood Sources**                                                             |
-|----------------|----------------|----------------|------------------------|
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | **1**        | \- Community awareness about the importance of the peat ecosystem, collaborating with district and provincial governments. <br><br> - Activities of the Peatland Stewardship Village aimed at increasing income and creating sources of livelihood for the community. | Conducted in synergy with district/city governments.                                                                                             | Directed at non-agricultural livelihood sources (off-farm). Local industries that exist need support.                               |
 | **2**        | Peatland Stewardship Village is executed in an integrated manner in partnership with HTI companies and palm oil plantations. The goal is to enhance community access.                                                                                                 | Strengthening farmers' livelihoods to protect the remaining peat ecosystems. Formulation of alternative livelihood sources.                      | Livelihood sources oriented towards peat-friendly agriculture, mixed plantations combined with non-agricultural livelihood sources. |
 | **3**        | Peatland Stewardship Village is oriented towards fire prevention; conducted in an integrated manner in partnership with HTI companies and palm oil plantations.                                                                                                       | Strengthening farmers' livelihoods through partnerships with plantation and HTI companies. Livelihoods aimed at forest and land fire prevention. | Livelihood sources oriented towards peat-friendly agriculture and plantations combined with fisheries and livestock.                |
