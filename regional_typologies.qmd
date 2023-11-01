@@ -1,7 +1,8 @@
 ---
 title: "Formulating Regional Typologies"
-author: "Dony Indiarto, Mohamad Nugraha"
-affiliation: "CIFOR-ICRAF Indonesia"
+author: "CIFOR-ICRAF Indonesia"
+date: last-modified
+date-format: "dddd MMM D, YYYY"
 project:
   type: website
   output-dir: docs
@@ -15,12 +16,24 @@ editor: visual
 ---
 
 ## Agenda
-
+0.  Background Context
 1.  Understanding the Regional Typologies
-2.  Methodology and Steps
-3.  Case Studies and Examples
+2.  Methodology
+3.  Case Studies
 4.  Closing Remarks
 
+-----------------------------------------------------------------------
+## Application of Typology in the Development Masterplan for Integrated Land and Seascape
+
+- The development of an integrated land and sea masterplan (green economic growth)  is structured around planning units.
+
+- Each planning unit is defined by a range of specific characteristics, derived from multiple layers of spatial data.
+
+- The concept of "Regional Typology" identifies common characteristics—whether in villages, districts, or special units—that guide the formulation of both planning units and strategy or intervention recommendations.
+
+- The planning process involves a continuous flow of data and information from macro to meso to micro levels, and vice versa.
+
+- The masterplan will include a range of tailored strategies and on-site interventions, reflecting the specific needs of each planning unit.
 ------------------------------------------------------------------------
 
 ## What are Regional Typologies?
