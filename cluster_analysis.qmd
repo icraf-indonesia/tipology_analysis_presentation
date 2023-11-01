@@ -2,16 +2,24 @@
 title: "Formulating Regional Typologies"
 author: "Dony Indiarto, Mohamad Nugraha"
 affiliation: "CIFOR-ICRAF Indonesia"
-format: revealjs
+project:
+  type: website
+  output-dir: docs
+format: 
+  revealjs:
+    theme: simple
+    scrollable: true
+    embed-resources: true
+reference-location: document
 editor: visual
 ---
 
 ## Agenda
 
-1. Understanding the Regional Typologies
-2. Methodology and Steps
-3. Case Studies and Examples
-4. Closing Remarks
+1.  Understanding the Regional Typologies
+2.  Methodology and Steps
+3.  Case Studies and Examples
+4.  Closing Remarks
 
 ------------------------------------------------------------------------
 
@@ -20,72 +28,319 @@ editor: visual
 -   **Definition**
     -   A categorization of geographical areas based on shared features.
     -   Features often include quantifiable socio-economic indicators and environmental factors.
-    
+
 ------------------------------------------------------------------------
 
 ## Why are Regional Typologies Important?
 
-- Regions vary in socio-economic and environmental aspects.
-- Typologies simplify this by creating manageable groups.
-- They facilitate comparisons and targeted management.
-    
-------------------------------------------------------------------------
-## How Do Typology and Regional Indexes Differ? {.smaller}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-### Urban-rural typology
-<!-- ![Urban-rural typology for NUTS level 3 regions](image/nuts.png) -->
-:::
-### Regional Index
-::: {.column width="50%"}
-<!-- ![Global Food Security Index](image/gfsi.png) -->
-:::
-
-::::
-
+-   Regions vary in socio-economic and environmental aspects.
+-   Typologies simplify this by creating manageable groups.
+-   They facilitate comparisons and targeted management.
 
 ------------------------------------------------------------------------
 
-## How Do Typology and Regional Indexes Differ? {.smaller}
+## How Do Typologies and Indexes Differ? {.smaller}
 
-| Criteria                  | Regional Typologies                                                                                 | Regional Index                                                                               |
-|----------------|--------------------------------|-------------------------|
-| **What it Is**            | Categorises areas based on similar socio-economic, environmental, or institutional characteristics. | A single, composite measure that quantifies the level of vulnerability to a specific threat. |
-| **Outcome**               | Classifications like "high-income urban area" or "low-resource rural area."                         | Numerical score ranking areas from low to high vulnerability.                                |
-| **Use-Case**              | Tailoring policies or interventions to different types of areas.                                    | Prioritising aid, resources, or interventions based on vulnerability.                        |
-| **Caveats**               | Can oversimplify complexities; subject to analyst bias.                                             | May not capture the full situation; choice of indicators and weightings can be arbitrary.    |
-| **Complementary Aspects** | Provides rich, contextual information.                                                              | Pinpoints areas needing immediate attention.                                                 |
+::: columns
+::: {.column width="50%"}
+**Typology**
+
+![Urban-rural typology for NUTS level 3 regions](image/nuts.png){height="400"}
+:::
+
+::: {.column width="50%"}
+**Index**
+
+![Global Food Security Index](image/gfsi.png){height="400"}
+:::
+:::
+
+------------------------------------------------------------------------
+
+## How Do Typologies and Indexes Differ? {.smaller}
+
+::: {style="font-size:20px"}
+| Criteria                  | Regional Typologies                                                                                 | Regional Indexes                                                                          |
+|------------------|------------------------------|------------------------|
+| **What it is**            | Categorises areas based on similar socio-economic, environmental, or institutional characteristics. | A single, composite measure that quantifies the level of vulnerability to a threat.       |
+| **Outcome**               | Classifications like "urban area" or "rural area."                                                  | Numerical score ranking areas from low to high vulnerability.                             |
+| **Use-case**              | Tailoring policies or interventions to different types of areas.                                    | Prioritising aid, resources, or interventions based on the ranking                        |
+| **Caveats**               | Can oversimplify complexities; subject to analyst bias.                                             | May not capture the full situation; choice of indicators and weightings can be arbitrary. |
+| **Complementary aspects** | Provides rich, contextual information.                                                              | Pinpoints areas needing immediate attention.                                              |
+
+: {.striped .hover}
+:::
 
 ------------------------------------------------------------------------
 
 ## How Do We Make Regional Typologies?
 
+::: {.panel-tabset style="font-size:20px"}
+### Key steps
+
 -   Formulate Objectives
--   Identify  Data requirement and availability
--   Data pre-processing
--   Variable selection and PCA
--   Cluster analysis and validation
+-   Identify Data requirement and availability
+-   Data collection & pre-processing
+-   Variable selection and PCA[^1]
+-   Cluster analysis[^2] and validation
 -   Interpretation and comparisons
 
+### Technical Workflow
+
+![](image/workflow.svg){height="1200" fig-align="center"}
+:::
+
+[^1]: Principle Component Analysis is a statistical technique used to simplify the complexity in data by highlighting its most important features.
+
+[^2]: Cluster analysis is a machine learning procedure used to group similar items together based on their characteristics.
+
 ------------------------------------------------------------------------
 
-## Slide 6: Case Studies and Examples
-
--   **Previous Projects**
-    -   West Kalimantan
-    -   South Sumatra
--   **Focus: South Sulawesi**
-    -   Scope, Objectives, and Key Findings
+# Case Studies
 
 ------------------------------------------------------------------------
 
-## Slide 7: Summary & Open Question
+## Case Study #1 {.smaller}
 
--   **Summary**
-    -   Importance of Cluster Analysis in regional planning.
--   **Open Question**
-    -   What would you like to learn from a cluster analysis for your specific context?
+::: {style="font-size:18px"}
+**Assessing and Characterizing Climate Vulnerabilities in Agriculture-Based Livelihoods: South Sulawesi**
+:::
+
+::: {.panel-tabset style="font-size:16px"}
+### Description
+
+**Aim**: Analyze vulnerabilities of agriculture livelihoods at the provincial level; identify key risks, root causes, and adaptation strategies.
+
+**Approach**: Define locations with similar biophysical and socio-economic characteristics as 'typologies' using PCA & K-means clustering.
+
+**Area of Interest**: South Sulawesi province
+
+**Unit of Analysis**: Sub-district (Kecamatan)
+
+### List of potential features
+
+### Collected data
+
+### PCA Summary
+
+### K-means cluster
+:::
+
+------------------------------------------------------------------------
+
+## Case Study #1 {.smaller}
+
+::: {style="font-size:18px"}
+**Assessing and Characterizing Climate Vulnerabilities in Agriculture-Based Livelihoods: South Sulawesi**
+:::
+
+::: {.panel-tabset style="font-size:16px"}
+### Map
+
+### **1. Islands**
+
+-   The second lowest household density after rural areas.
+
+-   Limited accessibility to land-based livelihoods.
+
+-   Economy predominantly relies on marine resources and maritime transport.
+
+-   Inadequate health, education facilities, and market access.
+
+-   Driest area in South Sulawesi with potential freshwater scarcity.
+
+-   High drought indices with significant predicted rainfall decrease.
+
+-   Over 40% of the population is underprivileged.
+
+-   Mostly situated in warm lowlands; a 1°C temperature rise could be impactful.
+
+### **2. Predominantly Rural & Biodiversity Rich**
+
+-   Rural areas in South Sulawesi with the lowest household density.
+
+-   Mountainous regions overlapping with protected areas, last bastions of unique Wallacean biodiversity.
+
+-   High rainfall, low drought vulnerability (AI = 0.3).
+
+-   In close proximity to forests, deforestation sites, and areas previously affected by fires.
+
+-   Furthest from plantation concessions and limited road and river access.
+
+-   Minimal changes in rainfall but the highest rate of temperature increase.
+
+-   Highest erosion risk; lowest flood risk.
+
+-   Almost 50% of the population falls in the bottom 40% economic bracket.
+
+### **3. Predominantly Plantation-Driven Economy**
+
+-   Closest to plantations, forests, and deforestation sites.
+
+-   Furthest from previously burned areas in Sulawesi.
+
+-   Medium household density per sub-district.
+
+-   Moderate flood risk.
+
+-   Moderate extent of irrigation.
+
+-   Second highest risk of erosion and landslides after inland areas.
+
+-   Highest rate of deforestation.
+
+-   High risk of rainfall reduction, though not classified as arid.
+
+-   About 1/3 of the population falls in the bottom 40% economic bracket.
+
+### **4. Food Basket**
+
+-   Highest arable land coverage, with predominant irrigated areas.
+
+-   Highest smallholder land ownership.
+
+-   Second closest proximity to burned areas after urban regions.
+
+-   Second highest access to roads and rivers following urban areas.
+
+-   Second highest household density per district after urban regions; similar trend observed in health and education facilities.
+
+-   Least proximity to forests due to limited forest cover.
+
+-   Primarily located in lowlands; a temperature rise of 1.41°C significantly impacts this already warm region.
+
+-   Expected to experience the most significant rainfall decrease (-84.31 mm) among typologies, making it the most drought-prone.
+
+-   Flood risks during the rainy season, aggravated by minimal remaining forest cover.
+
+-   High household density, with over a third belonging to the bottom 40% economic bracket.
+
+### **5. Predominantly Industry & Service-Driven Economy**
+
+-   Smallest area coverage (3%) with least arable land.
+
+-   Lowest smallholder land ownership, following island regions.
+
+-   Second closest proximity to burned areas after semi-urban regions.
+
+-   Best access to roads and rivers.
+
+-   Highest household density per district.
+
+-   Easy access to health facilities, supermarkets, universities, and hospitals. However, each unit caters to a large number of households.
+
+-   Only 15.1% of households fall within the bottom 40% economic bracket.
+
+-   Warmest current temperatures compared to other regions; a rise of 1.43°C significantly impacts underprivileged local residents.
+
+-   High flood risk, given many urban areas are near rivers.
+
+-   Heavily reliant on food supplies from other regions.
+
+### Area Composition
+
+### Demographic Composition
+:::
+
+------------------------------------------------------------------------
+
+## Case Study #2 {.smaller}
+
+::: {style="font-size:18px"}
+**Village-level vulnerability classes of agricultural-based livelihoods to climate change in the studied districts in West Kalimantan Province**
+:::
+
+::: {.panel-tabset style="font-size:16px"}
+### Map
+
+![](image/typ_west_kal.PNG){height="450" fig-align="center"}
+
+### Description
+
+**1 -- Most Vulnerable**: Located closest to oil palm plantations and factories, mining areas, and roads; has the largest shrub area per village; furthest from deforestation and has the lowest deforestation rate; has the smallest percentage of forested areas per village; high population.
+
+**2 -- Highly Vulnerable**: Located closest to burnt areas; has the largest percentage of oil palm area per village; situated nearer to oil palm concession areas and rubber factories; has the largest percentage of water bodies (lakes, rivers); has a lower deforestation rate but is located closer to deforestation areas; high population.
+
+**3 -- Moderately Vulnerable**: Located closest to rivers; has a larger percentage of oil palm area per village; situated slightly farther from oil palm companies and mining areas; has a larger percentage of forested and shrub areas per village; medium population.
+
+**4 -- Less Vulnerable**: Closest to deforestation areas and has the highest deforestation rate; located furthest from rivers; most distant from burnt areas; slightly closer to forested areas; slightly farther from oil palm concession areas; low population.
+
+**5 -- Least Vulnerable**: Has the largest percentage of forested areas per village; most remote; has the smallest percentage of shrub areas and oil palm areas per village; located closer to rivers and forested areas; has the lowest village population.
+
+### Source of Data
+
+| No  | Category                      | Spatially explicit variables                              | References                                                                   |
+|----------------|----------------|-----------------|------------------------|
+| 1   | Distance to infrastructure    | Distance to oil palm plantation                           | Landcover map 2017 from MoEF                                                 |
+| 2   | Distance to infrastructure    | Distance to roads                                         | BIG                                                                          |
+| 3   | Distance to infrastructure    | Distance to a rubber factory                              | ICRAF                                                                        |
+| 4   | Distance to infrastructure    | Distance to oil palm factory                              | ICRAF                                                                        |
+| 5   | Distance to natural resources | Distance to forest                                        | Landcover map 2017 from MoEF                                                 |
+| 6   | Distance to natural resources | Distance to river                                         | BIG                                                                          |
+| 7   | Distance to natural resources | Distance to mining areas                                  | BIG                                                                          |
+| 8   | Distance to hazards area      | Distance to burnt areas                                   | KLHK 2015                                                                    |
+| 9   | Land use and land cover       | \% area of oil palm per village                           | Landcover map 2017 from MoEF                                                 |
+| 10  | Land use and land cover       | \% of forested areas per village                          | Landcover map 2017 from MoEF                                                 |
+| 11  | Land use and land cover       | \% of shrubs areas per village                            | Landcover map 2017 from MoEF                                                 |
+| 12  | Land use and land cover       | \% forested areas per district compared to district areas | Landcover map 2017 from MoEF                                                 |
+| 13  | Land use and land cover       | \% oil palm areas at district level compare               | Landcover map 2017 from MoEF                                                 |
+| 14  | Land use and land cover       | \% water body compared to district areas                  | Badan Informasi Geospatial (BIG), Geospatial Information Agency of Indonesia |
+| 15  | Land use and land cover       | Distance to deforestation                                 | Landcover map 2017 from MoEF                                                 |
+| 16  | Land use and land cover       | Deforestation area                                        | Landcover map 2017 from MoEF                                                 |
+| 17  | Hazards                       | Flood incidence                                           | Village Potentials, Statistics Indonesia 2018                                |
+| 18  | Hazards                       | Heavy flood incidence                                     | Village Potentials, Statistics Indonesia 2018                                |
+| 19  | Hazards                       | Fire incidences                                           | Village Potentials, Statistics Indonesia 2018                                |
+| 20  | Hazards                       | Drought incidences                                        | Village Potentials, Statistics Indonesia 2018                                |
+| 21  | Demography                    | Village population                                        | Village Potentials, Statistics Indonesia 2018                                |
+| 22  | Distance to infrastructure    | Distance to oil palm concession areas                     | Department of Estate Crops, West Kalimantan Province                         |
+
+: {.striped .hover}
+:::
+
+------------------------------------------------------------------------
+
+## Case Study #3 {.smaller}
+
+::: {style="font-size:18px"}
+**Peat Ecosystem Typologies in South Sumatra Province**
+:::
+
+::: {.panel-tabset style="font-size:16px"}
+### Map
+
+![](image/typ_south_sum.PNG){height="450" fig-align="center"}
+
+### Description
+
+**Typology 1**: High fire occurrences in protected areas, both with and without drainage. Lowest rates of deforestation, degradation, and plantation expansion. Low population and poverty, closest to cities with easy access.
+
+**Typology 2**: High fire occurrences in cultivated areas, both with and without drainage. High deforestation rate, low degradation, and minimal plantation expansion. Highest population and poverty, near cities with easy access.
+
+**Typology 3**: Fires occur in both cultivated and protected areas, irrespective of drainage. Highest rates of deforestation, degradation, and plantation expansion. Low population and poverty, furthest from cities with challenging access.
+
+**Typology 4**: Most frequent fires in protected areas, regardless of drainage. Low deforestation, high degradation, and significant plantation expansion. Low population and poverty, far from cities with very limited access.
+
+**Typology 5**: Most frequent fires in cultivated areas, irrespective of drainage. Low deforestation, high degradation, and significant plantation expansion. Low population and poverty, remote from cities with challenging access.
+
+### Typology-Based Intervention
+
+| **Typology** | **R.3.1 Establishment of Peatland Stewardship Village**                                                                                                                                                                                                               | **R.3.2 Enhancing Livelihood Capacity**                                                                                                          | **R.3.3 Development of Alternative Commodities and Livelihood Sources**                                                             |
+|----------------|----------------|----------------|------------------------|
+| **1**        | \- Community awareness about the importance of the peat ecosystem, collaborating with district and provincial governments. <br><br> - Activities of the Peatland Stewardship Village aimed at increasing income and creating sources of livelihood for the community. | Conducted in synergy with district/city governments.                                                                                             | Directed at non-agricultural livelihood sources (off-farm). Local industries that exist need support.                               |
+| **2**        | Peatland Stewardship Village is executed in an integrated manner in partnership with HTI companies and palm oil plantations. The goal is to enhance community access.                                                                                                 | Strengthening farmers' livelihoods to protect the remaining peat ecosystems. Formulation of alternative livelihood sources.                      | Livelihood sources oriented towards peat-friendly agriculture, mixed plantations combined with non-agricultural livelihood sources. |
+| **3**        | Peatland Stewardship Village is oriented towards fire prevention; conducted in an integrated manner in partnership with HTI companies and palm oil plantations.                                                                                                       | Strengthening farmers' livelihoods through partnerships with plantation and HTI companies. Livelihoods aimed at forest and land fire prevention. | Livelihood sources oriented towards peat-friendly agriculture and plantations combined with fisheries and livestock.                |
+| **4**        | Peatland Stewardship Village geared towards fire prevention; enhancing community access to markets and high-economic value commodities.                                                                                                                               | Strengthening farmers' livelihoods through partnerships with plantation and HTI companies. Emphasis on preventing forest and land fires.         | Livelihood sources focused on peat-friendly agriculture and plantations combined with fisheries and livestock.                      |
+| **5**        | Peatland Stewardship Village focused on fire prevention; enhancing community access to markets and commodities of high economic value.                                                                                                                                | Strengthening farmers' livelihoods through partnerships with plantation and HTI companies. Emphasis on preventing forest and land fires.         | Livelihood sources focused on peat-friendly agriculture and plantations combined with fisheries and livestock.                      |
+
+: Classification of peat ecosystem revitalization actions in South Sumatra province {.striped .hover}
+:::
+
+------------------------------------------------------------------------
+
+## Conclusion
+
+-   We showcase examples on how regional typologies can be produced
+-   The aim of the study shapes the data selection and interpretation of the typologies.
+-   Iterative feedback from experts is essential for ensuring typologies align with objectives.
 
 ------------------------------------------------------------------------
