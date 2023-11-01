@@ -23,9 +23,10 @@ editor: visual
 4.  Closing Remarks
 
 -----------------------------------------------------------------------
+
 ## Application of Typology in the Development Masterplan for Integrated Land and Seascape
 
-- The development of an integrated land and sea masterplan (green economic growth)  is structured around planning units.
+- The development of an integrated land and sea masterplan (green economic growth) is structured around planning units.
 
 - Each planning unit is defined by a range of specific characteristics, derived from multiple layers of spatial data.
 
