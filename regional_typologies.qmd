@@ -216,17 +216,63 @@ readr::read_csv("data/sample_input.csv") |>
 
 ### PCA Summary
 
-```{r Map}
+```{r PCA Summary}
 #| warning: false
 #| message: false
+readr::read_csv("data/pca_summary.csv") |> 
+  gt()|>
+  tab_header(
+    title = "Principal Component Analysis Summary",
+    subtitle = "Importance of components") |> 
+    opt_align_table_header(align = "left")
 ```
 
-### K-means cluster
 
+---
+#### Loadings Interpretation
+**PC1: Predominantly Demography & Disaster Risk**
+![](image/loadings PC1.png)
+
+**PC2: Predominantly Climate Features**
+![](image/loadings PC2.png)
+
+**PC3: Predominantly Distance Features**
+![](image/loadings PC3.png)
+
+
+### K-means cluster
+#### The first three principal components, colored by cluster
 ```{r K-means cluster}
 #| warning: false
 #| message: false
+library(plotly)
+library(leaflet)
+library(sf)
+library(dplyr)
+
+plot_data <- readr::read_csv("data/cluster_3d_viz.csv") |> dplyr::mutate(cluster = as.factor(cluster))
+# Create the 3D scatter plot
+plot_3d <- plot_ly(
+  data = plot_data,
+  x = ~ PC1,
+  y = ~ PC2,
+  z = ~ PC3,
+  color = ~ cluster,
+  type = "scatter3d",
+  text = ~ paste("Kab./Kota:", nmkab, "<br>Kecamatan:", nmkec),
+  mode = "markers"
+) 
+# Show the plot
+plot_3d
+
 ```
+#### Cluster Validation
+::: {layout-ncol=2}
+
+![The "elbow" of the plot is the point where adding more clusters doesn't provide much better fit to the data.](image/elbow_method.png)
+
+![A silhouette plot closer to +1 indicates good clustering, while values closer to 0 or negative values suggest overlapping or poor clustering](image/shilloutte_analysis.png)
+:::
 :::
 
 ------------------------------------------------------------------------
@@ -243,10 +289,7 @@ readr::read_csv("data/sample_input.csv") |>
 ```{r Map}
 #| warning: false
 #| message: false
-library(plotly)
-library(leaflet)
-library(sf)
-library(dplyr)
+
 
 clusters_sulsel <- st_read("data/tipologi_5_kelas_sulsel.shp" , quiet = TRUE)
 cluster_lookup <- readr::read_csv("data/cluster_names.csv")
@@ -337,7 +380,6 @@ fig_RT <- intisari_desk_kec |>
 fig_RT
 ```
 
-![](image/5cluster.png){height="450" fig-align="center"}
 
 ### **1. Islands**
 
@@ -377,7 +419,7 @@ fig_RT
 
 ### **3. Predominantly Plantation-Driven Economy**
 
--   Closest to plantations, forests, and deforestation sites.
+-   Close to plantations, forests, and deforestation sites.
 
 -   Furthest from previously burned areas in Sulawesi.
 
