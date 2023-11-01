@@ -137,7 +137,7 @@ editor: visual
 ### List of collected features
 
 | No  | Feature                                                | Source                                                  | Unit            |
-|-----|--------------------------------------------------------|---------------------------------------------------------|-----------------|
+|-----------------|-----------------------|-----------------|-----------------|
 | 1   | Distance to plantation                                 | Land cover map 2020, MoEF                               | m               |
 | 2   | Distance to road                                       | BIG                                                     | m               |
 | 3   | Distance to commodity processing factory               | ICRAF (2016)                                            | m               |
@@ -190,18 +190,39 @@ editor: visual
 | 50  | Wet months                                             | WORLDCLIM 2.1                                           | months          |
 
 ### A sample of ready-to-process data
+
 ```{r a sample of data }
 #| warning: false
 #| message: false
+library(gt)
+readr::read_csv("data/sample_input.csv") |> 
+  gt()|>
+  tab_header(
+    title = "A sample of the Data"
+  )|>
+  cols_label(
+    idkec_dum = "ID",
+    nmkab = "District",
+    nmkec = "Sub-district",
+    distance_to_plantation = "Dist. to Plantation (m)",
+    distance_to_road = "Dist. to Road (m)",
+    distance_to_commodity_processing_factory = "Dist. to Comm.Proc Factory (m)"
+  )|>
+  fmt_number(
+    columns = c(distance_to_plantation, distance_to_road, distance_to_commodity_processing_factory),
+    decimals = 2
+  )
 ```
 
 ### PCA Summary
+
 ```{r Map}
 #| warning: false
 #| message: false
 ```
 
 ### K-means cluster
+
 ```{r K-means cluster}
 #| warning: false
 #| message: false
@@ -218,6 +239,7 @@ editor: visual
 
 ::: {.panel-tabset style="font-size:16px"}
 ### Map
+
 ```{r Map}
 #| warning: false
 #| message: false
@@ -298,7 +320,6 @@ fig_luas <- intisari_desk_kec |>
 # Show the plot
 fig_luas
 ```
-
 
 ### Demographic Composition
 
@@ -417,9 +438,6 @@ fig_RT
 -   High flood risk, given many urban areas are near rivers.
 
 -   Heavily reliant on food supplies from other regions.
-
-
-
 :::
 
 ------------------------------------------------------------------------
@@ -450,7 +468,8 @@ fig_RT
 ### Source of Data
 
 | No  | Category                      | Spatially explicit variables                              | References                                                                   |
-|-----|-------------------------------|-----------------------------------------------------------|------------------------------------------------------------------------------|
+|------------------|------------------|------------------|-------------------|
+>>>>>>> Stashed changes
 | 1   | Distance to infrastructure    | Distance to oil palm plantation                           | Landcover map 2017 from MoEF                                                 |
 | 2   | Distance to infrastructure    | Distance to roads                                         | BIG                                                                          |
 | 3   | Distance to infrastructure    | Distance to a rubber factory                              | ICRAF                                                                        |
@@ -505,7 +524,8 @@ fig_RT
 ### Typology-Based Intervention
 
 | **Typology** | **R.3.1 Establishment of Peatland Stewardship Village**                                                                                                                                                                                                               | **R.3.2 Enhancing Livelihood Capacity**                                                                                                          | **R.3.3 Development of Alternative Commodities and Livelihood Sources**                                                             |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+|------------------|------------------|------------------|-------------------|
+>>>>>>> Stashed changes
 | **1**        | \- Community awareness about the importance of the peat ecosystem, collaborating with district and provincial governments. <br><br> - Activities of the Peatland Stewardship Village aimed at increasing income and creating sources of livelihood for the community. | Conducted in synergy with district/city governments.                                                                                             | Directed at non-agricultural livelihood sources (off-farm). Local industries that exist need support.                               |
 | **2**        | Peatland Stewardship Village is executed in an integrated manner in partnership with HTI companies and palm oil plantations. The goal is to enhance community access.                                                                                                 | Strengthening farmers' livelihoods to protect the remaining peat ecosystems. Formulation of alternative livelihood sources.                      | Livelihood sources oriented towards peat-friendly agriculture, mixed plantations combined with non-agricultural livelihood sources. |
 | **3**        | Peatland Stewardship Village is oriented towards fire prevention; conducted in an integrated manner in partnership with HTI companies and palm oil plantations.                                                                                                       | Strengthening farmers' livelihoods through partnerships with plantation and HTI companies. Livelihoods aimed at forest and land fire prevention. | Livelihood sources oriented towards peat-friendly agriculture and plantations combined with fisheries and livestock.                |
