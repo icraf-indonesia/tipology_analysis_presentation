@@ -585,3 +585,15 @@ fig_RT
 -   Iterative feedback from experts is essential for ensuring typologies align with objectives.
 
 ------------------------------------------------------------------------
+
+## Relevant Readings {.smaller}
+
+::: {style="font-size:20px"}
+- Vyas, S. and Kumaranayake, L., 2006. Constructing socio-economic status indices: how to use principal components analysis. Health policy and planning, 21(6), pp.459-468.
+- Collier, D., LaPorte, J. and Seawright, J., 2012. Putting typologies to work: Concept formation, measurement, and analytic rigor. Political research quarterly, 65(1), pp.217-232.
+- Harvey, C.A., Rakotobe, Z.L., Rao, N.S., Dave, R., Razafimahatratra, H., Rabarijohn, R.H., Rajaofara, H. and MacKinnon, J.L., 2014. Extreme vulnerability of smallholder farmers to agricultural risks and climate change in Madagascar. Philosophical Transactions of the Royal Society B: Biological Sciences, 369(1639), p.20130089.
+- Muthoni, F.K., Guo, Z., Bekunda, M., Sseguya, H., Kizito, F., Baijukya, F. and Hoeschle-Zeledon, I., 2017. Sustainable recommendation domains for scaling agricultural technologies in Tanzania. Land Use Policy, 66, pp.34-48.
+- Parker, L., Bourgoin, C., Martinez-Valle, A. and Läderach, P., 2019. Vulnerability of the agricultural sector to climate change: The development of a pan-tropical Climate Risk Vulnerability Assessment to inform sub-national decision making. PloS one, 14(3), p.e0213641.
+- Upadhaya, S., Arbuckle, J.G. and Schulte, L.A., 2021. Developing farmer typologies to inform conservation outreach in agricultural landscapes. Land Use Policy, 101, p.105157.
+- Kaminski, A., Bauer, D.M., Bell, K.P., Loftin, C.S. and Nelson, E.J., 2021. Using landscape metrics to characterize towns along an urban-rural gradient. Landscape Ecology, 36(10), pp.2937-2956.
+:::
