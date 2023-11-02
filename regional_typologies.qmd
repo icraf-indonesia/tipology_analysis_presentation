@@ -1,7 +1,8 @@
 ---
 title: "Formulating Regional Typologies"
-author: "Dony Indiarto, Mohamad Nugraha"
-affiliation: "CIFOR-ICRAF Indonesia"
+author: "CIFOR-ICRAF Indonesia"
+date: last-modified
+date-format: "dddd MMM D, YYYY"
 project:
   type: website
   output-dir: docs
@@ -9,17 +10,34 @@ format:
   revealjs:
     theme: simple
     scrollable: true
-    embed-resources: true
+    self-contained: true
 reference-location: document
 editor: visual
 ---
 
 ## Agenda
 
+0.  Background Context
 1.  Understanding the Regional Typologies
-2.  Methodology and Steps
-3.  Case Studies and Examples
+2.  Methodology
+3.  Case Studies
 4.  Closing Remarks
+
+------------------------------------------------------------------------
+
+## Application of Typology in the Development Masterplan for Integrated Land and Seascape {.smaller}
+
+::: {style="font-size:26px"}
+-   The development of an integrated land and sea masterplan (green economic growth) is structured around planning units.
+
+-   Each planning unit is defined by a range of specific characteristics, derived from multiple layers of spatial data.
+
+-   The concept of "Regional Typology" identifies common characteristics---whether in villages, districts, or special units---that guide the formulation of both planning units and strategy or intervention recommendations.
+
+-   The planning process involves a continuous flow of data and information from macro to meso to micro levels, and vice versa.
+
+-   The masterplan will include a range of tailored strategies and on-site interventions, reflecting the specific needs of each planning unit.
+:::
 
 ------------------------------------------------------------------------
 
@@ -45,13 +63,13 @@ editor: visual
 ::: {.column width="50%"}
 **Typology**
 
-![Urban-rural typology for NUTS level 3 regions](image/nuts.png){height="400"}
+[![Urban-rural typology for NUTS level 3 regions](image/nuts.png){height="400" fig-align="center"}](https://ec.europa.eu/eurostat/cache/RCI/#?vis=urbanrural.urb_typology&lang=en)
 :::
 
 ::: {.column width="50%"}
 **Index**
 
-![Global Food Security Index](image/gfsi.png){height="400"}
+[![Global Food Security Index](image/gfsi.png){height="400" fig-align="center"}](https://impact.economist.com/sustainability/project/food-security-index/explore-countries)
 :::
 :::
 
@@ -61,7 +79,7 @@ editor: visual
 
 ::: {style="font-size:20px"}
 | Criteria                  | Regional Typologies                                                                                 | Regional Indexes                                                                          |
-|------------------|------------------------------|------------------------|
+|---------------------------|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | **What it is**            | Categorises areas based on similar socio-economic, environmental, or institutional characteristics. | A single, composite measure that quantifies the level of vulnerability to a threat.       |
 | **Outcome**               | Classifications like "urban area" or "rural area."                                                  | Numerical score ranking areas from low to high vulnerability.                             |
 | **Use-case**              | Tailoring policies or interventions to different types of areas.                                    | Prioritising aid, resources, or interventions based on the ranking                        |
@@ -117,13 +135,145 @@ editor: visual
 
 **Unit of Analysis**: Sub-district (Kecamatan)
 
-### List of potential features
+### List of collected features
 
-### Collected data
+| No  | Feature                                                | Source                                                  | Unit            |
+|-----------------|-----------------------|-----------------|-----------------|
+| 1   | Distance to plantation                                 | Land cover map 2020, MoEF                               | m               |
+| 2   | Distance to road                                       | BIG                                                     | m               |
+| 3   | Distance to commodity processing factory               | ICRAF (2016)                                            | m               |
+| 4   | Distance to plantation concession                      | South Sulawesi Government                               | m               |
+| 5   | Distance to forest                                     | Land cover map 2020, MoEF                               | m               |
+| 6   | Distance to river                                      | BIG                                                     | m               |
+| 7   | Distance to burned area                                | MoEF, 2019                                              | m               |
+| 8   | Percentage of agricultural area (small holder)         | Land cover map 2020, MoEF                               | \%              |
+| 9   | Percentage of plantation area per sub-district         | Land cover map 2020, MoEF                               | \%              |
+| 10  | Percentage of forested area in the sub-district        | Land cover map 2020, MoEF                               | \%              |
+| 11  | Percentage of shrubland in the sub-district            | Land cover map 2020, MoEF                               | \%              |
+| 12  | Percentage of water area compared to sub-district area | Land cover map 2020, MoEF                               | \%              |
+| 13  | Distance to deforestation                              | Land cover map 2020, MoEF                               | m               |
+| 14  | Deforestation area size                                | Land cover map 2020, MoEF                               | km^2^           |
+| 15  | Arable land                                            | Land cover map 2020, MoEF                               | \%              |
+| 16  | Erosion                                                | RUSLE                                                   | t ha^-1^ yr^-1^ |
+| 17  | Flood hazard index                                     | RBI BNPB                                                | index value     |
+| 18  | Land slide hazard index                                | RBI BNPB                                                | index value     |
+| 19  | Aridity index                                          | WORLDCLIM 2.1                                           | index value     |
+| 20  | Number of Households                                   | Potensi desa BPS 2019                                   | number          |
+| 21  | Electrification ratio                                  | Potensi desa BPS 2019                                   | \%              |
+| 22  | High school                                            | Potensi desa BPS 2019                                   | number          |
+| 23  | University                                             | Potensi desa BPS 2019                                   | number          |
+| 24  | Hospital                                               | Potensi desa BPS 2019                                   | number          |
+| 25  | Health facility                                        | Potensi desa BPS 2019                                   | number          |
+| 26  | Market                                                 | Potensi desa BPS 2019                                   | number          |
+| 27  | Minimarket                                             | Potensi desa BPS 2019                                   | number          |
+| 28  | Landslide events 2018-2019                             | Potensi desa BPS 2019                                   | events/year     |
+| 29  | Landslide fatalities 2018-2019                         | Potensi desa BPS 2019                                   | people/year     |
+| 30  | Flood events 2018-2019                                 | Potensi desa BPS 2019                                   | events/year     |
+| 31  | Flood fatalities 2018-2019                             | Potensi desa BPS 2019                                   | people/year     |
+| 32  | Flash flood events 2018-2019                           | Potensi desa BPS 2019                                   | events/year     |
+| 33  | Flash flood fatalities 2018-2019                       | Potensi desa BPS 2019                                   | people/year     |
+| 34  | Land and forest fire events 2018-2019                  | Potensi desa BPS 2019                                   | events/year     |
+| 35  | Land and forest fire fatalities 2018-2019              | Potensi desa BPS 2019                                   | people/year     |
+| 36  | Land drought events 2018-2019                          | Potensi desa BPS 2019                                   | events/year     |
+| 37  | Land drought fatalities 2018-2019                      | Potensi desa BPS 2019                                   | people/year     |
+| 38  | Natural disaster early warning systems                 | Potensi desa BPS 2019                                   | Number          |
+| 39  | Percentage natural disaster early warning systems      | Potensi desa BPS 2019                                   | \%              |
+| 40  | Reservoir                                              | Potensi desa BPS 2019                                   | number          |
+| 41  | Village markets                                        | Potensi desa BPS 2019                                   | number          |
+| 42  | Number of people suffering from malnutrition 2018      | Potensi desa BPS 2019                                   | individuals     |
+| 43  | Annual mean temperature                                | WORLDCLIM 2.1                                           | °C              |
+| 44  | Temperature changes                                    | WORLDCLIM 2.1 & MRI-ESM2-0 SSP 245 2050s                | °C              |
+| 45  | Annual mean precipitation                              | WORLDCLIM 2.1                                           | mm              |
+| 46  | Precipitation changes                                  | WORLDCLIM 2.1 & MRI-ESM2-0 SSP 245 2050s                | mm              |
+| 47  | Households in the lowest 40% of the economic bracket   | National Team for the Acceleration of Poverty Reduction | \%              |
+| 48  | Distance to irrigated land                             | Ministry of Public Works and Housing                    | m               |
+| 49  | Percentage of irrigated land                           | Ministry of Public Works and Housing                    | \%              |
+| 50  | Wet months                                             | WORLDCLIM 2.1                                           | months          |
+
+### A sample of ready-to-process data
+
+```{r a sample of data }
+#| warning: false
+#| message: false
+library(gt)
+readr::read_csv("data/sample_input.csv") |> 
+  gt()|>
+  tab_header(
+    title = "A sample of the Data"
+  )|>
+  cols_label(
+    idkec_dum = "ID",
+    nmkab = "District",
+    nmkec = "Sub-district",
+    distance_to_plantation = "Dist. to Plantation (m)",
+    distance_to_road = "Dist. to Road (m)",
+    distance_to_commodity_processing_factory = "Dist. to Comm.Proc Factory (m)"
+  )|>
+  fmt_number(
+    columns = c(distance_to_plantation, distance_to_road, distance_to_commodity_processing_factory),
+    decimals = 2
+  )
+```
 
 ### PCA Summary
 
+```{r PCA Summary}
+#| warning: false
+#| message: false
+readr::read_csv("data/pca_summary.csv") |> 
+  gt()|>
+  tab_header(
+    title = "Principal Component Analysis Summary",
+    subtitle = "Importance of components") |> 
+    opt_align_table_header(align = "left")
+```
+
+
+---
+#### Loadings Interpretation
+**PC1: Predominantly Demography & Disaster Risk**
+![](image/loadings PC1.png)
+
+**PC2: Predominantly Climate Features**
+![](image/loadings PC2.png)
+
+**PC3: Predominantly Distance Features**
+![](image/loadings PC3.png)
+
+
 ### K-means cluster
+#### The first three principal components, colored by cluster
+```{r K-means cluster}
+#| warning: false
+#| message: false
+library(plotly)
+library(leaflet)
+library(sf)
+library(dplyr)
+
+plot_data <- readr::read_csv("data/cluster_3d_viz.csv") |> dplyr::mutate(cluster = as.factor(cluster))
+# Create the 3D scatter plot
+plot_3d <- plot_ly(
+  data = plot_data,
+  x = ~ PC1,
+  y = ~ PC2,
+  z = ~ PC3,
+  color = ~ cluster,
+  type = "scatter3d",
+  text = ~ paste("Kab./Kota:", nmkab, "<br>Kecamatan:", nmkec),
+  mode = "markers"
+) 
+# Show the plot
+plot_3d
+
+```
+#### Cluster Validation
+::: {layout-ncol=2}
+
+![The "elbow" of the plot is the point where adding more clusters doesn't provide much better fit to the data.](image/elbow_method.png)
+
+![A silhouette plot closer to +1 indicates good clustering, while values closer to 0 or negative values suggest overlapping or poor clustering](image/shilloutte_analysis.png)
+:::
 :::
 
 ------------------------------------------------------------------------
@@ -136,6 +286,101 @@ editor: visual
 
 ::: {.panel-tabset style="font-size:16px"}
 ### Map
+
+```{r Map}
+#| warning: false
+#| message: false
+
+
+clusters_sulsel <- st_read("data/tipologi_5_kelas_sulsel.shp" , quiet = TRUE)
+cluster_lookup <- readr::read_csv("data/cluster_names.csv")
+
+# Constructing the label string first
+clusters_sulsel$label_content <- with(
+  clusters_sulsel,
+  paste0(
+    "<strong>Kabupaten:</strong> ",
+    nmkab,
+    "<br>",
+    "<strong>Kecamatan:</strong> ",
+    nmkec,
+    "<br>",
+    "<strong>Cluster:</strong> ",
+    cluster
+  )
+) |> lapply(htmltools::HTML)
+
+clusters_sulsel_with_name <- clusters_sulsel |> right_join(cluster_lookup, by = "cluster")
+
+pal <-
+  colorFactor(palette = "Set1", domain = clusters_sulsel_with_name$name)
+
+
+
+# Create the leaflet map with HTML-rendered labels
+leaflet(clusters_sulsel_with_name) |>
+  addProviderTiles(providers$OpenStreetMap) |>
+  addPolygons(
+    fillColor = ~ pal(name),
+    weight = 0.5,
+    opacity = 1,
+    color = "white",
+    dashArray = "3",
+    fillOpacity = 0.7,
+    highlight = highlightOptions(
+      weight = 5,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.7,
+      bringToFront = TRUE
+    ),
+    label = ~ label_content,
+    labelOptions = labelOptions(noHide = FALSE,
+                                direction = 'auto')
+  ) |>
+  addLegend(pal = pal,
+            values = ~ name,
+            title = "Typology")
+
+```
+
+### Area Composition
+
+```{r komposisi kecamatan}
+#| warning: false
+#| message: false
+source("R/functions.R")
+intisari_desk_kec <- readr::read_csv("data/interpretasi_tipologi_sulsel.csv") |> 
+  dplyr::mutate(`Kepadatan RT` = `Luas (Ha)`/`Rumah Tangga`)
+
+fig_luas <- intisari_desk_kec |> 
+  filter(Nama != "Total") |> 
+  plot_ly(labels = ~Nama, values = ~`Luas (Ha)`) |> 
+  add_pie(hole = 0.6) |> 
+  layout(title = "Area Composition (Ha)",
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))  
+
+# Show the plot
+fig_luas
+```
+
+### Demographic Composition
+
+```{r donat RT}
+# Create the plot for Jumlah RT
+fig_RT <- intisari_desk_kec |> 
+  filter(Nama != "Total") |> 
+  plot_ly(labels = ~Nama, values = ~`Rumah Tangga`) |> 
+  add_pie(hole = 0.6) |> 
+  layout(title = "Number of Households",
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))  
+
+# Show the plot
+fig_RT
+```
+
 
 ### **1. Islands**
 
@@ -175,7 +420,7 @@ editor: visual
 
 ### **3. Predominantly Plantation-Driven Economy**
 
--   Closest to plantations, forests, and deforestation sites.
+-   Close to plantations, forests, and deforestation sites.
 
 -   Furthest from previously burned areas in Sulawesi.
 
@@ -236,10 +481,6 @@ editor: visual
 -   High flood risk, given many urban areas are near rivers.
 
 -   Heavily reliant on food supplies from other regions.
-
-### Area Composition
-
-### Demographic Composition
 :::
 
 ------------------------------------------------------------------------
@@ -270,7 +511,7 @@ editor: visual
 ### Source of Data
 
 | No  | Category                      | Spatially explicit variables                              | References                                                                   |
-|-----------------|-----------------|-----------------|----------------------|
+|------------------|------------------|------------------|-------------------|
 | 1   | Distance to infrastructure    | Distance to oil palm plantation                           | Landcover map 2017 from MoEF                                                 |
 | 2   | Distance to infrastructure    | Distance to roads                                         | BIG                                                                          |
 | 3   | Distance to infrastructure    | Distance to a rubber factory                              | ICRAF                                                                        |
@@ -325,7 +566,7 @@ editor: visual
 ### Typology-Based Intervention
 
 | **Typology** | **R.3.1 Establishment of Peatland Stewardship Village**                                                                                                                                                                                                               | **R.3.2 Enhancing Livelihood Capacity**                                                                                                          | **R.3.3 Development of Alternative Commodities and Livelihood Sources**                                                             |
-|-----------------|-----------------|-----------------|----------------------|
+|------------------|------------------|------------------|-------------------|
 | **1**        | \- Community awareness about the importance of the peat ecosystem, collaborating with district and provincial governments. <br><br> - Activities of the Peatland Stewardship Village aimed at increasing income and creating sources of livelihood for the community. | Conducted in synergy with district/city governments.                                                                                             | Directed at non-agricultural livelihood sources (off-farm). Local industries that exist need support.                               |
 | **2**        | Peatland Stewardship Village is executed in an integrated manner in partnership with HTI companies and palm oil plantations. The goal is to enhance community access.                                                                                                 | Strengthening farmers' livelihoods to protect the remaining peat ecosystems. Formulation of alternative livelihood sources.                      | Livelihood sources oriented towards peat-friendly agriculture, mixed plantations combined with non-agricultural livelihood sources. |
 | **3**        | Peatland Stewardship Village is oriented towards fire prevention; conducted in an integrated manner in partnership with HTI companies and palm oil plantations.                                                                                                       | Strengthening farmers' livelihoods through partnerships with plantation and HTI companies. Livelihoods aimed at forest and land fire prevention. | Livelihood sources oriented towards peat-friendly agriculture and plantations combined with fisheries and livestock.                |
