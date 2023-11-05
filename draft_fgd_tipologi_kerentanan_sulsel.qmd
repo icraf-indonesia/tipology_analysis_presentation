@@ -1,0 +1,381 @@
+---
+title: "[DRAFT] Tipologi Kerentanan Iklim pada Penghidupan Berbasis Pertanian: Sulawesi Selatan"
+format: 
+  html:
+    toc: true
+    number-sections: true
+editor: visual
+execute:
+  echo: false
+project:
+  type: website
+  output-dir: docs
+editor_options: 
+  chunk_output_type: inline
+comments:
+  utterances:
+    repo: icraf-indonesia/vulnerability-typology-map
+---
+
+# Pendahuluan
+
+::: panel-tabset
+## Abstrak
+
+Penghidupan berbasis pertanian kini makin rentan terhadap perubahan iklim, tetapi informasi mengenai potensi resiko dan kebutuhan adaptasi mereka masih sangat terbatas. Draft dokumen ini disusun untuk mengisi kekosongan ini dengan mengevaluasi berbagai jenis kerentanan yang mempengaruhi mata pencaharian berbasis pertanian di tingkat provinsi. Kami melakukan penilaian kerentanan untuk mengidentifikasi risiko serta penyebabnya, dan potensi adaptasi, dengan fokus pada peningkatan taraf hidup, keberlanjutan produksi komoditas-komoditas kunci, dan pengelolaan lahan secara menyeluruh.
+
+Mengingat tingginya keanekaragaman lanskap di Sulawesi Selatan, kami memfokuskan perhatian pada kecamatan-kecamatan dengan fitur biofisik dan sosial-ekonomi yang mirip. Ini membantu kami mempermudah tugas dalam mengidentifikasi risiko yang identik antar kecamatan. Kami mendefinisikan area-area homogen ini, atau 'tipologi,' dengan menggunakan pengelompokan K-means. Pengelompokan ini didasarkan pada komposit dari indikator biofisik dan sosial-ekonomi. Untuk mempermudah proses pengelompokan, kami menggunakan analisis PCA untuk menyederhanakan dimensi data.
+
+## Tujuan
+
+- Analisis ini bertujuan untuk mengidentifikasi 'tipologi' kecamatan-kecamatan, yang memiliki karakter sosial-ekonomi dan lingkungan yang mirip di Provinsi Sulawesi Selatan, dengan menggunakan pengelompokan K-means pada data yang disederhanakan oleh PCA. 
+
+- Tipologi tersebut kemudian digunakan untuk mendeskripsikan konteks kerentanan penghidupan berbasis pertanian akibat perubahan iklim di Provinsi Sulawesi Selatan dan potensi intervensi untuk meningkatkan ketahanan terhadap perubahan iklim.
+
+
+:::
+
+# Deskripsi wilayah & Metodologi
+::: panel-tabset
+## Deskripsi Provinsi Sulawesi Selatan
+
+Provinsi Sulawesi Selatan, yang terletak di semenanjung bagian selatan pulau Sulawesi, Indonesia, memiliki luas wilayah sebesar 46.717 kilometer persegi. Provinsi ini dicirikan dengan rangkaian pegunungan berapi dari utara ke selatan dan dipisahkan oleh lembah Danau Tempe di bagian tengahnya. Iklim di daerah ini didominasi dengan curah hujan yang tinggi sepanjang tahun, yang merupakan ciri khas iklim hutan hujan tropis.
+
+Sulawesi Selatan merupakan rumah bagi sekitar 8,851 juta penduduk berdasarkan data tahun 2019. Provinsi ini memiliki tingkat ketimpangan ekonomi yang moderat, seperti yang tercermin dalam rasio Gini untuk setiap distriknya, yang berkisar antara 0.32 hingga 0.40 pada tahun 2022. Provinsi ini mencatatkan angka 7.22 pada Indeks Pembangunan Manusia (IPM) di tahun yang sama.
+
+Produk Domestik Bruto (PDB) Sulawesi Selatan sekitar 605,145 miliar Rupiah Indonesia pada tahun 2022. Hal ini menempatkan Sulawesi Selatan sebagai ekonomi terbesar kesembilan di antara provinsi-provinsi di Indonesia.
+
+Pertanian memiliki peran penting dalam perekonomian provinsi, dengan diperkirakan satu juta petani beroperasi di Sulawesi Selatan, menurut Survei Pertanian Antar Sensus (SUTAS) tahun 2018 yang dilakukan oleh Badan Pusat Statistik (BPS). Produk pertanian utama meliputi padi, jagung, kopra (daging kelapa kering), kopi, rempah-rempah, minyak sayur, tebu, kedelai, dan ubi jalar. Hutan di kawasan ini menghasilkan sumber daya yang berharga seperti kayu jati dan rotan, dan perikanan laut dalam juga memberikan kontribusi terhadap ekonomi lokal.
+
+## Daftar Variabel
+
+**Unit analisis terkecil**: Kecamatan
+
+| No  | Fitur                                                 | Sumber                                                  | Satuan          |
+|-----|-------------------------------------------------------|---------------------------------------------------------|-----------------|
+| 1   | Jarak ke perkebunan                                   | Peta Tutupan Lahan 2020, KLHK                           | m               |
+| 2   | Jarak ke jalan                                        | BIG                                                     | m               |
+| 3   | Jarak ke pabrik pengolahan komoditas                  | ICRAF (2016)                                            | m               |
+| 4   | Jarak ke konsesi perkebunan                           | Pemerintah Sulawesi Selatan                             | m               |
+| 5   | Jarak ke hutan                                        | Peta Tutupan Lahan 2020, KLHK                           | m               |
+| 6   | Jarak ke sungai                                       | BIG                                                     | m               |
+| 7   | Jarak ke area terbakar                                | KLHK, 2019                                              | m               |
+| 8   | Persentase area pertanian (pekebun kecil)             | Peta Tutupan Lahan 2020, KLHK                           | %               |
+| 9   | Persentase area perkebunan per kecamatan              | Peta Tutupan Lahan 2020, KLHK                           | %               |
+| 10  | Persentase area berhutan di kecamatan                 | Peta Tutupan Lahan 2020, KLHK                           | %               |
+| 11  | Persentase area semak belukar di kecamatan            | Peta Tutupan Lahan 2020, KLHK                           | %               |
+| 12  | Persentase area perairan dibandingkan dengan kecamatan| Peta Tutupan Lahan 2020, KLHK                           | %               |
+| 13  | Jarak ke deforestasi                                  | Peta Tutupan Lahan 2020, KLHK                           | m               |
+| 14  | Ukuran area deforestasi                               | Peta Tutupan Lahan 2020, KLHK                           | km²             |
+| 15  | Lahan yang dapat ditanami                             | Peta Tutupan Lahan 2020, KLHK                           | %               |
+| 16  | Erosi                                                 | RUSLE                                                   | t ha⁻¹ th⁻¹     |
+| 17  | Indeks bahaya banjir                                  | RBI BNPB                                                | nilai indeks    |
+| 18  | Indeks bahaya tanah longsor                           | RBI BNPB                                                | nilai indeks    |
+| 19  | Indeks kekeringan                                     | WORLDCLIM 2.1                                           | nilai indeks    |
+| 20  | Jumlah Rumah Tangga                                   | Potensi desa BPS 2019                                   | jumlah          |
+| 21  | Rasio elektrifikasi                                   | Potensi desa BPS 2019                                   | %               |
+| 22  | Sekolah menengah                                      | Potensi desa BPS 2019                                   | jumlah          |
+| 23  | Universitas                                           | Potensi desa BPS 2019                                   | jumlah          |
+| 24  | Rumah sakit                                           | Potensi desa BPS 2019                                   | jumlah          |
+| 25  | Fasilitas kesehatan                                   | Potensi desa BPS 2019                                   | jumlah          |
+| 26  | Pasar                                                 | Potensi desa BPS 2019                                   | jumlah          |
+| 27  | Minimarket                                            | Potensi desa BPS 2019                                   | jumlah          |
+| 28  | Kejadian tanah longsor 2018-2019                      | Potensi desa BPS 2019                                   | kejadian/tahun  |
+| 29  | Korban jiwa tanah longsor 2018-2019                   | Potensi desa BPS 2019                                   | orang/tahun     |
+| 30  | Kejadian banjir 2018-2019                             | Potensi desa BPS 2019                                   | kejadian/tahun  |
+| 31  | Korban jiwa banjir 2018-2019                          | Potensi desa BPS 2019                                   | orang/tahun     |
+| 32  | Kejadian banjir bandang 2018-2019                     | Potensi desa BPS 2019                                   | kejadian/tahun  |
+| 33  | Korban jiwa banjir bandang 2018-2019                  | Potensi desa BPS 2019                                   | orang/tahun     |
+| 34  | Kejadian kebakaran lahan dan hutan 2018-2019          | Potensi desa BPS 2019                                   | kejadian/tahun  |
+| 35  | Korban jiwa kebakaran lahan dan hutan 2018-2019       | Potensi desa BPS 2019                                   | orang/tahun     |
+| 36  | Kejadian kekeringan lahan 2018-2019                   | Potensi desa BPS 2019                                   | kejadian/tahun  |
+| 37  | Korban jiwa kekeringan lahan 2018-2019                | Potensi desa BPS 2019                                   | orang/tahun     |
+| 38  | Sistem peringatan dini bencana alam                   | Potensi desa BPS 2019                                   | jumlah          |
+| 39  | Persentase sistem peringatan dini bencana alam        | Potensi desa BPS 2019                                   | %               |
+| 40  | Waduk                                                 | Potensi desa BPS 2019                                   | jumlah          |
+| 41  | Pasar desa                                            | Potensi desa BPS 2019                                   | jumlah          |
+| 42  | Jumlah penduduk yang menderita gizi buruk tahun 2018  | Potensi desa BPS 2019                                   | individu        |
+| 43  | Suhu rata-rata tahunan                                | WORLDCLIM 2.1                                           | °C              |
+| 44  | Perubahan suhu                                        | WORLDCLIM 2.1 & MRI-ESM2-0 SSP 245 2050-an              | °C              |
+| 45  | Curah hujan rata-rata tahunan                         | WORLDCLIM 2.1                                           | mm              |
+| 46  | Perubahan curah hujan                                 | WORLDCLIM 2.1 & MRI-ESM2-0 SSP 245 2050-an              | mm              |
+| 47  | Rumah tangga dalam 40% kelompok ekonomi terendah      | Tim Nasional Percepatan Penanggulangan Kemiskinan       | %               |
+| 48  | Jarak ke lahan irigasi                                | Kementerian PUPR                                        | m               |
+| 49  | Persentase lahan irigasi                              | Kementerian PUPR                                        | %               |
+| 50  | Bulan basah                                           | WORLDCLIM 2.1                                           | bulan           |
+
+## Skema Teknis Pembuatan Tipologi
+![](image/workflow.svg){height="1200" fig-align="center"}
+
+## Intisari Hasil PCA
+
+```{r PCA Summary}
+#| warning: false
+#| message: false
+library(gt)
+readr::read_csv("data/pca_summary_id.csv") |> 
+  gt()|>
+  tab_header(
+    title = "Intisari Analisis Komponen Utama (PCA)",
+    subtitle = "Tingkat Kepentingan Komponen") |> 
+    opt_align_table_header(align = "left")
+```
+
+------------------------------------------------------------------------
+
+### Interpretasi Komponen Utama (PCs)
+
+**PC1: Predominan Demografi dan Risiko Bencana** ![](image/loadings%20PC1.png)
+
+**PC2: Predominan Karakter Iklim** ![](image/loadings%20PC2.png)
+
+**PC3: Predominan Karakter Jarak Geografis** ![](image/loadings%20PC3.png)
+
+## Hasil Pengelompokan K-means
+
+### Diagram pencar 3D tipologi kecamatan-kecamatan di Sulawesi Selatan
+
+- Sumbu x,y dan z dari diagram pencar merupakan tiga komponen utama teratas dari hasil PCA.
+    - **PC1: Predominan Demografi dan Risiko Bencana**
+    - **PC2: Predominan Karakter Iklim**
+    - **PC3: Predominan Karakter Jarak Geografis**
+
+- Tiap-titiknya mewakili sebuah kecamatan di Sulawesi Selatan.
+- Titik yang berwarna sama berarti tergolong dalam tipologi yang sama.
+
+```{r K-means cluster}
+#| warning: false
+#| message: false
+library(plotly)
+library(leaflet)
+library(sf)
+library(dplyr)
+
+plot_data <- readr::read_csv("data/cluster_3d_viz.csv") |> dplyr::mutate(cluster = as.factor(cluster))
+# Create the 3D scatter plot
+plot_3d <- plot_ly(
+  data = plot_data,
+  x = ~ PC1,
+  y = ~ PC2,
+  z = ~ PC3,
+  color = ~ cluster,
+  type = "scatter3d",
+  text = ~ paste("Kab./Kota:", nmkab, "<br>Kecamatan:", nmkec),
+  mode = "markers"
+) 
+# Show the plot
+plot_3d
+
+```
+
+### Cluster Validation
+
+::: {layout-ncol="2"}
+![Titik 'siku' dari sebuah elbow plot adalah titik di mana menambahkan penambahan jumlah kluster tidak banyak memberikan tambahan informasi baru.](image/elbow_method.png)
+
+![Plot siluet yang mendekati +1 menunjukkan pengelompokan yang baik, sementara nilai yang mendekati 0 atau nilai negatif menunjukkan pengelompokan yang tumpang tindih atau tidak baik.](image/shilloutte_analysis.png)
+:::
+:::
+
+
+# Hasil & Interpretasi Sementara (Draft)
+
+**Tipologi Kerentanan Terhadap Perubahan Iklim pada Penghidupan Berbasis Pertanian di Sulawesi Selatan**
+
+::: {.panel-tabset}
+### Peta Tipologi
+
+```{r Map}
+#| warning: false
+#| message: false
+
+
+clusters_sulsel <- st_read("data/tipologi_5_kelas_sulsel.shp" , quiet = TRUE)
+cluster_lookup <- readr::read_csv("data/cluster_names_id.csv")
+
+# Constructing the label string first
+clusters_sulsel$label_content <- with(
+  clusters_sulsel,
+  paste0(
+    "<strong>Kabupaten:</strong> ",
+    nmkab,
+    "<br>",
+    "<strong>Kecamatan:</strong> ",
+    nmkec,
+    "<br>",
+    "<strong>Cluster:</strong> ",
+    cluster
+  )
+) |> lapply(htmltools::HTML)
+
+clusters_sulsel_with_name <- clusters_sulsel |> right_join(cluster_lookup, by = "cluster")
+
+pal <-
+  colorFactor(palette = "Set1", domain = clusters_sulsel_with_name$name)
+
+
+
+# Create the leaflet map with HTML-rendered labels
+leaflet(clusters_sulsel_with_name) |>
+  addProviderTiles(providers$OpenStreetMap) |>
+  addPolygons(
+    fillColor = ~ pal(name),
+    weight = 0.5,
+    opacity = 1,
+    color = "white",
+    dashArray = "3",
+    fillOpacity = 0.7,
+    highlight = highlightOptions(
+      weight = 5,
+      color = "#666",
+      dashArray = "",
+      fillOpacity = 0.7,
+      bringToFront = TRUE
+    ),
+    label = ~ label_content,
+    labelOptions = labelOptions(noHide = FALSE,
+                                direction = 'auto')
+  ) |>
+  addLegend(pal = pal,
+            values = ~ name,
+            title = "Typology")
+
+```
+
+### Komposisi Luas Wilayah
+
+```{r komposisi kecamatan}
+#| warning: false
+#| message: false
+source("R/functions.R")
+intisari_desk_kec <- readr::read_csv("data/interpretasi_tipologi_sulsel_id.csv") |> 
+  dplyr::mutate(`Kepadatan RT` = `Luas (Ha)`/`Rumah Tangga`)
+
+fig_luas <- intisari_desk_kec |> 
+  filter(Nama != "Total") |> 
+  plot_ly(labels = ~Nama, values = ~`Luas (Ha)`) |> 
+  add_pie(hole = 0.6) |> 
+  layout(title = "Komposisi Luas Wilayah (Ha)",
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))  
+
+# Show the plot
+fig_luas
+```
+
+### Komposisi Demografi
+
+```{r donat RT}
+# Create the plot for Jumlah RT
+fig_RT <- intisari_desk_kec |> 
+  filter(Nama != "Total") |> 
+  plot_ly(labels = ~Nama, values = ~`Rumah Tangga`) |> 
+  add_pie(hole = 0.6) |> 
+  layout(title = "Jumlah Rumah Tangga",
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))  
+
+# Show the plot
+fig_RT
+```
+
+### **1. Kepulauan**
+
+-  Kepadatan rumah tangga terendah kedua setelah daerah pedesaan.
+
+- Keterbatasan aksesibilitas terhadap mata pencaharian berbasis darat.
+
+- Ekonomi dominan bergantung pada sumber daya kelautan dan transportasi maritim.
+
+-  Fasilitas kesehatan dan pendidikan serta akses pasar yang tidak memadai.
+
+-  Daerah terkering di Sulawesi Selatan dengan potensi kekurangan air tawar.
+
+-  Indeks kekeringan tinggi dengan penurunan curah hujan yang signifikan diprediksi.
+
+-  Lebih dari 40% penduduknya kurang mampu.
+
+-  Sebagian besar terletak di dataran rendah yang hangat; kenaikan suhu 1°C dapat berdampak besar.
+
+### **2. Dominan Perdesaan Kaya Kehati**
+
+-   Daerah pedesaan di Sulawesi Selatan dengan kepadatan rumah tangga terendah.
+
+-   Wilayah pegunungan yang bertumpang tindih dengan area terlindungi, benteng terakhir keanekaragaman hayati Wallacea yang unik.
+
+-   Curah hujan tinggi, kerentanan kekeringan rendah (AI = 0.3).
+
+-   Berdekatan dengan hutan, lokasi deforestasi, dan area yang sebelumnya terkena kebakaran.
+
+-   Paling jauh dari konsesi perkebunan dan akses jalan serta sungai yang terbatas.
+
+-   Perubahan curah hujan minimal namun memiliki tingkat kenaikan suhu tertinggi.
+
+-   Risiko erosi tertinggi; risiko banjir terendah.
+
+-   Hampir 50% penduduk berada dalam 40% kelompok ekonomi terbawah.
+
+### **3. Dominan Ekonomi Pertanian Berbasis Pohon**
+
+-   Dekat dengan perkebunan, hutan, dan lokasi deforestasi.
+
+-   Paling jauh dari area yang sebelumnya terbakar di Sulawesi.
+
+-   Kepadatan rumah tangga menengah per kecamatan.
+
+-   Risiko banjir moderat.
+
+-   Luasan irigasi yang moderat.
+
+-   Risiko tertinggi kedua untuk erosi dan tanah longsor setelah daerah pedalaman.
+
+-   Tingkat deforestasi tertinggi.
+
+-   Risiko tinggi terhadap penurunan curah hujan, meski tidak diklasifikasikan sebagai daerah kering.
+
+-   Sekitar 1/3 penduduk berada dalam 40% kelompok ekonomi terbawah.
+
+### **4. Lumbung Pangan**
+
+-   Cakupan lahan pertanian tertinggi, dengan area yang dominan teririgasi.
+
+-   Kepemilikan lahan petani kecil tertinggi.
+
+-   Kedekatan kedua terhadap area terbakar setelah daerah perkotaan.
+
+-   Akses kedua tertinggi ke jalan dan sungai setelah daerah perkotaan.
+
+-   Kepadatan rumah tangga per distrik tertinggi kedua setelah daerah perkotaan; tren serupa diamati pada fasilitas kesehatan dan pendidikan.
+
+-   Kedekatan terendah dengan hutan karena cakupan hutan yang terbatas.
+
+-   Terletak di dataran rendah; kenaikan suhu 1,41°C sangat mempengaruhi daerah yang sudah hangat ini.
+
+-   Diperkirakan akan mengalami penurunan curah hujan terbesar (-84,31 mm) di antara tipologi, menjadikannya paling rentan terhadap kekeringan.
+
+-   Risiko banjir selama musim hujan, diperparah oleh sisa tutupan hutan yang minim.
+
+-   Kepadatan rumah tangga tinggi, dengan lebih dari sepertiga termasuk dalam 40% kelompok ekonomi terbawah.
+
+### **5. Dominan Ekonomi Berbasis Industri dan Jasa**
+
+-   Cakupan area terkecil (3%) dengan lahan pertanian paling sedikit.
+
+-   Kepemilikan lahan petani kecil terendah, setelah daerah kepulauan.
+
+-   Kedekatan kedua terhadap area terbakar setelah daerah semi-perkotaan.
+
+-   Akses terbaik ke jalan dan sungai.
+
+-   Kepadatan rumah tangga per distrik tertinggi.
+
+-   Akses mudah ke fasilitas kesehatan, supermarket, universitas, dan rumah sakit. Namun, setiap unit melayani sejumlah besar rumah tangga.
+
+-   Hanya 15,1% rumah tangga yang termasuk dalam 40% kelompok ekonomi terbawah.
+
+-   Suhu saat ini paling hangat dibandingkan dengan daerah lain; kenaikan suhu 1,43°C sangat mempengaruhi penduduk kurang mampu di lokasi ini.
+
+-   Risiko banjir tinggi, mengingat banyak area perkotaan berada di dekat sungai.
+
+-   Sangat bergantung pada pasokan makanan dari daerah lain.
+:::
