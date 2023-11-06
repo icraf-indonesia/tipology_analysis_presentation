@@ -201,7 +201,7 @@ tabel_intisari <- readRDS("data/summary_table_sulsel.rds") |>
     variable == "indeks_bahaya_longsor" ~ "indeks risiko longsor",
     variable == "irrigated_land" ~ "lahan irigasi",
     variable == "percentage_deforestation_area_size" ~ "persentase ukuran area deforestasi",
-    variable == "percentage_of_agricultural_area_small_holder_in_the_village…" ~ "persentase area pertanian skala kecil",
+    variable == "percentage_of_agricultural_area_small_holder_in_the_village" ~ "persentase area pertanian skala kecil",
     variable == "percentage_of_plantation_area_per_sub_district" ~ "persentase area perkebunan per kecamatan",
     variable == "prec_change" ~ "perubahan curah hujan",
     variable == "rasio_40pers_ekon_rendah_rt" ~ "rasio 40 persen ekonomi rendah RT",
@@ -227,9 +227,25 @@ tabel_intisari_formatted <- tabel_intisari |>
 tabel_intisari_formatted
 ```
 
-Kode warna pada tabel dibawah menunjukkan rentang nilai dari variabel yang diberikan untuk masing-masing tipe wilayah. Warna biru gelap menunjukkan nilai yang lebih tinggi, sementara warna yang lebih merah terang menunjukkan nilai yang lebih rendah.
+::: callout-tip
+### Apa itu rata-rata dan standar deviasi?
+
+**Rata-Rata**
+
+Rata-rata adalah angka yang sering kita gunakan untuk mengetahui gambaran umum dari sekelompok data. Misalnya, jika rata-rata jarak ke jalan terdekat di daerah urban cuma 0,24 km, ini menunjukkan bahwa umumnya daerah tersebut dekat dengan jalan raya.
+
+**Standar Deviasi**
+
+Standar deviasi (SD) memberitahu kita seberapa besar variasi atau perbedaan antar angka dalam sekelompok data. Semakin tinggi SD, makin besar juga variasinya. Misalnya, rata-rata jarak ke jalan terdekat di daerah urban adalah 0,24 km dengan SD 0,45 km. Ini artinya yang sangat dekat dengan jalan, tetapi juga ada yang jauh---bahkan lebih dari dua kali lipat dari rata-rata.
+
+Nilai standar deviasi (SD) yang besar, seperti contoh diatas, menjadi indikasi bahwa, rata-rata mungkin tidak memberikan gambaran yang mewakili suatu tipologi. Dalam hal ini, standar deviasi memberikan konteks tambahan yang penting untuk memahami sejauh mana data bervariasi.
+:::
+
 
 ## Tabel Interpretasi Klaster (Berwarna)
+
+Kode warna pada tabel dibawah menunjukkan rentang nilai dari variabel yang diberikan untuk masing-masing tipe wilayah. Warna biru gelap menunjukkan nilai yang lebih tinggi, sementara warna yang lebih merah terang menunjukkan nilai yang lebih rendah.
+
 
 ```{r color coded table}
 #| warning: false
@@ -381,9 +397,9 @@ fig_RT
 
 -  Kepadatan rumah tangga terendah kedua setelah daerah pedesaan.
 
-- Keterbatasan aksesibilitas terhadap mata pencaharian berbasis darat.
+-  Keterbatasan aksesibilitas terhadap mata pencaharian berbasis darat.
 
-- Ekonomi dominan bergantung pada sumber daya kelautan dan transportasi maritim.
+-  Ekonomi dominan bergantung pada sumber daya kelautan dan transportasi maritim.
 
 -  Fasilitas kesehatan dan pendidikan serta akses pasar yang tidak memadai.
 
