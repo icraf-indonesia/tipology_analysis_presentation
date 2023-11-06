@@ -4,6 +4,7 @@ format:
   html:
     toc: true
     number-sections: true
+    self-contained: true
 editor: visual
 execute:
   echo: false
