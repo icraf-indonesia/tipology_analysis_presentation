@@ -176,6 +176,103 @@ plot_3d
 
 ![Plot siluet yang mendekati +1 menunjukkan pengelompokan yang baik, sementara nilai yang mendekati 0 atau nilai negatif menunjukkan pengelompokan yang tumpang tindih atau tidak baik.](image/shilloutte_analysis.png)
 :::
+
+## Tabel Interpretasi Klaster
+
+```{r Tabel Intisari Klaster Sulsel}
+library(gt)
+
+tabel_intisari <- readRDS("data/summary_table_sulsel.rds") |> 
+  dplyr::mutate(variable = dplyr::case_when(
+    variable == "annual_mean_prec" ~ "curah hujan rata-rata tahunan",
+    variable == "annual_mean_temp" ~ "suhu rata-rata tahunan",
+    variable == "arable_land_percent" ~ "persentase lahan pertanian",
+    variable == "aridity_index" ~ "indeks kekeringan",
+    variable == "distance_to_burned_area" ~ "jarak ke area terbakar",
+    variable == "distance_to_commodity_processing_factory" ~ "jarak ke pabrik pengolahan komoditas",
+    variable == "distance_to_deforestation" ~ "jarak ke area deforestasi",
+    variable == "distance_to_forest" ~ "jarak ke hutan",
+    variable == "distance_to_plantation" ~ "jarak ke perkebunan",
+    variable == "distance_to_plantation_concession" ~ "jarak ke konsesi perkebunan",
+    variable == "distance_to_river" ~ "jarak ke sungai",
+    variable == "distance_to_road" ~ "jarak ke jalan",
+    variable == "erosion_risk_t_ha_1_yr_1" ~ "risiko erosi t ha per tahun",
+    variable == "indeks_bahaya_banjir" ~ "indeks risiko banjir",
+    variable == "indeks_bahaya_longsor" ~ "indeks risiko longsor",
+    variable == "irrigated_land" ~ "lahan irigasi",
+    variable == "percentage_deforestation_area_size" ~ "persentase ukuran area deforestasi",
+    variable == "percentage_of_agricultural_area_small_holder_in_the_village…" ~ "persentase area pertanian skala kecil",
+    variable == "percentage_of_plantation_area_per_sub_district" ~ "persentase area perkebunan per kecamatan",
+    variable == "prec_change" ~ "perubahan curah hujan",
+    variable == "rasio_40pers_ekon_rendah_rt" ~ "rasio 40 persen ekonomi rendah RT",
+    variable == "rasio_faskes_1" ~ "rasio fasilitas kesehatan 1",
+    variable == "rasio_minimarket_swalayan" ~ "rasio minimarket swalayan",
+    variable == "rasio_pt" ~ "rasio perguruan tinggi",
+    variable == "rasio_rs" ~ "rasio rumah sakit",
+    variable == "temp_change" ~ "perubahan suhu",
+    variable == "total_kk_berdasarkan_pengguna_dan_non_pengguna_list…" ~ "total KK berdasarkan pengguna dan non pengguna listrik",
+    variable == "wet_months" ~ "bulan basah",
+    # Add other translations here
+    TRUE ~ variable # default action to keep the original name if not matched
+  )) |> 
+  dplyr::mutate(variable = gsub("_", " ", variable)) |> 
+  dplyr::rename(Variabel = variable)
+  
+tabel_intisari_formatted <- tabel_intisari |> 
+  gt()|>
+  tab_header(
+    title = "Karakteristik Sosio-ekonomi dan Lingkungan di Berbagai Kelas Tipologi: Analisis Rata-rata dan Standar Deviasi") |> 
+    opt_align_table_header(align = "left")
+
+tabel_intisari_formatted
+```
+
+Kode warna pada tabel dibawah menunjukkan rentang nilai dari variabel yang diberikan untuk masing-masing tipe wilayah. Warna biru gelap menunjukkan nilai yang lebih tinggi, sementara warna yang lebih merah terang menunjukkan nilai yang lebih rendah.
+
+## Tabel Interpretasi Klaster (Berwarna)
+
+```{r color coded table}
+#| warning: false
+#| message: false
+# Function to extract numeric values
+extract_numeric <- function(cell_value) {
+  as.numeric(unlist(strsplit(cell_value, " "))[1])
+}
+
+# Function to get color for each value based on its rank in the row
+get_row_colors <- function(row_values) {
+
+  rank_values <- rank(row_values)
+  colorRampPalette(c("darkblue","lightyellow", "salmon"))(length(row_values))[rank_values]
+}
+
+# Compute colors for the entire table
+all_values <- apply(tabel_intisari[2:6], 2, function(row) {
+  sapply(row, extract_numeric)
+})
+
+all_colors <- apply(all_values, 2, get_row_colors)
+
+
+# Apply the colors to the gt table
+gt_table <- all_values |> tibble::as_tibble() |>
+  {\(x) dplyr::bind_cols(tabel_intisari[1], x, tabel_intisari[7])}() |> 
+  gt() |>
+  data_color(
+    method = "factor",
+    direction = "row",
+    columns = 2:6,
+    colors = c("salmon","lightyellow", "darkblue")
+   # reverse = TRUE
+  ) |>
+  tab_options(
+    container.overflow.x = TRUE,
+    container.overflow.y = TRUE
+  )
+gt_table
+
+```
+
 :::
 
 
