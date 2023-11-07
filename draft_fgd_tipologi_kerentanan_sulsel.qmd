@@ -320,7 +320,7 @@ clusters_sulsel$label_content <- with(
 clusters_sulsel_with_name <- clusters_sulsel |> right_join(cluster_lookup, by = "cluster")
 
 pal <-
-  colorFactor(palette = "Set1", domain = clusters_sulsel_with_name$name)
+  leaflet::colorFactor(palette = "Set1", domain = clusters_sulsel_with_name$name)
 
 
 
@@ -358,11 +358,13 @@ leaflet(clusters_sulsel_with_name) |>
 #| message: false
 source("R/functions.R")
 intisari_desk_kec <- readr::read_csv("data/interpretasi_tipologi_sulsel_id.csv") |> 
-  dplyr::mutate(`Kepadatan RT` = `Luas (Ha)`/`Rumah Tangga`)
+  dplyr::mutate(`Kepadatan RT` = `Luas (Ha)`/`Rumah Tangga`) |> 
+  mutate(color_pal = c("#A65628","#984EA3","#377EB8","#E41A1C","#FF7F00",  "#4DAF4A", "black" ))
 
 fig_luas <- intisari_desk_kec |> 
   filter(Nama != "Total") |> 
-  plot_ly(labels = ~Nama, values = ~`Luas (Ha)`) |> 
+  plot_ly( labels = ~Nama, values = ~`Luas (Ha)`,
+               marker = list(colors = ~color_pal))|> 
   add_pie(hole = 0.6) |> 
   layout(title = "Komposisi Luas Wilayah (Ha)",
          xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
@@ -376,13 +378,27 @@ fig_luas
 
 ```{r donat RT}
 # Create the plot for Jumlah RT
-fig_RT <- intisari_desk_kec |> 
-  filter(Nama != "Total") |> 
-  plot_ly(labels = ~Nama, values = ~`Rumah Tangga`) |> 
-  add_pie(hole = 0.6) |> 
-  layout(title = "Jumlah Rumah Tangga",
-         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))  
+fig_RT <- intisari_desk_kec |>
+  filter(Nama != "Total") |>
+  plot_ly(
+    labels = ~ Nama,
+    values = ~ `Rumah Tangga`,
+     marker = list(colors = ~color_pal)
+  ) |>
+  add_pie(hole = 0.6) |>
+  layout(
+    title = "Jumlah Rumah Tangga",
+    xaxis = list(
+      showgrid = FALSE,
+      zeroline = FALSE,
+      showticklabels = FALSE
+    ),
+    yaxis = list(
+      showgrid = FALSE,
+      zeroline = FALSE,
+      showticklabels = FALSE
+    )
+  )  
 
 # Show the plot
 fig_RT
@@ -442,9 +458,6 @@ fig_RT
 
 -   Tipologi dengan luas tertinggi (35% dari total luas daratan Provinsi Sulawesi Selatan) & ditinggali oleh 19% rumah tangga.
 
-```{=html}
-<!-- -->
-```
 -   Tutupan lahan dominan dengan kelas-kelas pertanian berbasis pohon.
 
 -   Dekat dengan perkebunan, hutan, dan lokasi deforestasi.
