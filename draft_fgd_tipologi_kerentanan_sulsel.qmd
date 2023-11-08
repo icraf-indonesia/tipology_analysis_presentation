@@ -299,12 +299,19 @@ gt_table
 #| message: false
 
 
-clusters_sulsel <- st_read("data/tipologi_5_kelas_sulsel.shp" , quiet = TRUE)
+
 cluster_lookup <- readr::read_csv("data/cluster_names_id.csv")
+clusters_sulsel <- st_read("data/tipologi_5_kelas_sulsel.shp" , quiet = TRUE) 
+
+
+clusters_sulsel_with_name <- clusters_sulsel |> right_join(cluster_lookup, by = "cluster")
+
+pal <-
+  leaflet::colorFactor(palette = "Set1", domain = clusters_sulsel_with_name$name, reverse = TRUE)
 
 # Constructing the label string first
-clusters_sulsel$label_content <- with(
-  clusters_sulsel,
+clusters_sulsel_with_name$label_content <- with(
+  clusters_sulsel_with_name,
   paste0(
     "<strong>Kabupaten:</strong> ",
     nmkab,
@@ -312,15 +319,10 @@ clusters_sulsel$label_content <- with(
     "<strong>Kecamatan:</strong> ",
     nmkec,
     "<br>",
-    "<strong>Cluster:</strong> ",
-    cluster
+    "<strong>Tipologi:</strong> ",
+    name
   )
 ) |> lapply(htmltools::HTML)
-
-clusters_sulsel_with_name <- clusters_sulsel |> right_join(cluster_lookup, by = "cluster")
-
-pal <-
-  leaflet::colorFactor(palette = "Set1", domain = clusters_sulsel_with_name$name)
 
 
 
@@ -359,7 +361,7 @@ leaflet(clusters_sulsel_with_name) |>
 source("R/functions.R")
 intisari_desk_kec <- readr::read_csv("data/interpretasi_tipologi_sulsel_id.csv") |> 
   dplyr::mutate(`Kepadatan RT` = `Luas (Ha)`/`Rumah Tangga`) |> 
-  mutate(color_pal = c("#A65628","#984EA3","#377EB8","#E41A1C","#FF7F00",  "#4DAF4A", "black" ))
+  mutate(color_pal = c("#A65628","#E41A1C", "#377EB8",  "#4DAF4A","#FF7F00", "#984EA3", "black" ))
 
 fig_luas <- intisari_desk_kec |> 
   filter(Nama != "Total") |> 
@@ -404,7 +406,7 @@ fig_RT <- intisari_desk_kec |>
 fig_RT
 ```
 
-### **1. Kepulauan**
+### **1. Wilayah Kepulauan**
 
 **Karakteristik**
 
@@ -412,7 +414,7 @@ fig_RT
 
 -   Kegiatan ekonomi cenderung bergantung pada sumber daya laut dan serta infrastruktur transportasi laut.
 
--   Kepadatan rumah tangga (penduduk) terendah kedua setelah tipologi perdesaan kaya kehati.
+-   Kepadatan rumah tangga (penduduk) terendah kedua setelah tipologi perdesaan sumber kehati.
 
 -   Aksesibilitas terhadap penghidupan berbasis lahan paling terbatas dibanding tipologi lainnya.
 
@@ -426,7 +428,7 @@ fig_RT
 
 -   Sebagian besar terletak di dataran rendah yang hangat; kenaikan suhu 1°C dapat berdampak besar.
 
-### **2. Dominan Perdesaan Kaya Kehati**
+### **2. Perdesaan Sumber Kehati**
 
 **Karakteristik**
 
@@ -446,19 +448,19 @@ fig_RT
 
 -   Karena kondisi topografi dan curah hujan tinggi, risiko erosi dan longsor paling tinggi dibandingkan dengan tipologi lainnya.
 
--   Laju kehilangan tutupan hutan (2015-2020) tertinggi setelah tipologi dominan ekonomi pertanian berbasis pohon. Paling dekat dengan lokasi bekas terbakar (2019).
+-   Laju kehilangan tutupan hutan (2015-2020) tertinggi setelah tipologi sentra pertanian berbasis pohon. Paling dekat dengan lokasi bekas terbakar (2019).
 
 -   Hampir 50% penduduk berada dalam 40% kelompok ekonomi terbawah. Akses terhadap fasilitas pendidikan dan kesehatan yang terbatas.
 
 -   Aksesibilitas terhadap penghidupan berbasis lahan paling terbatas dibandingkan tipologi lainnya di Sulawesi Selatan (kecuali kepulauan).
 
-### **3. Dominan Ekonomi Pertanian Berbasis Pohon**
+### **3. Sentra Pertanian Berbasis Pohon/Perkebunan**
 
 **Karakteristik**
 
 -   Tipologi dengan luas tertinggi (35% dari total luas daratan Provinsi Sulawesi Selatan) & ditinggali oleh 19% rumah tangga.
 
--   Tutupan lahan dominan dengan kelas-kelas pertanian berbasis pohon.
+-   Tutupan lahan dominan dengan kelas-kelas pertanian berbasis pohon dan perkebunan.
 
 -   Dekat dengan perkebunan, hutan, dan lokasi deforestasi.
 
@@ -478,13 +480,13 @@ fig_RT
 
 **Tantangan Utama**
 
--   Risiko erosi dan tanah longsor tertinggi kedua setelah daerah perdesaan kaya kehati
+-   Risiko erosi dan tanah longsor tertinggi kedua setelah daerah perdesaan sumber kehati
 
 -   Laju kehilangan tutupan hutan (2015-2020) paling tinggi dibanding tipologi lainnya.
 
 -   Sekitar 1/3 penduduk berada dalam 40% kelompok ekonomi terbawah.
 
-### **4. Lumbung Pangan** 
+### **4. Perdesaan Pertanian Pangan** 
 
 **Karakteristik**
 
@@ -496,9 +498,9 @@ fig_RT
 
 -    Tipologi dengan jarak paling jauh dari tutupan kelas hutan, namun relatif dekat dengan area bekas terbakar (2019).
 
--   Aksesibilitas ke jalan dan sungai tergolong baik, kedua setelah tipologi dominan ekonomi industri dan jasa.
+-   Aksesibilitas ke jalan dan sungai tergolong baik, kedua setelah tipologi sentra industri dan jasa.
 
--   Kepadatan rumah tangga per kecamatan tertinggi kedua setelah tipologi dominan ekonomi industri dan jasa; pola serupa ada pada aksesibilitas terhadap fasilitas kesehatan dan pendidikan.
+-   Kepadatan rumah tangga per kecamatan tertinggi kedua setelah tipologi sentra industri dan jasa; pola serupa ada pada aksesibilitas terhadap fasilitas kesehatan dan pendidikan.
 
 **Tantangan Utama**
 
@@ -510,7 +512,7 @@ fig_RT
 
 -   Jumlah rumah tangga yang tinggi namun dengan lebih dari sepertiganya termasuk dalam 40% kelompok ekonomi terbawah.
 
-### **5. Dominan Ekonomi Berbasis Industri dan Jasa**
+### **5. Sentra Industri dan Jasa**
 
 **Karakteristik**
 
