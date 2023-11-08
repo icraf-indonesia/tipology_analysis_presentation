@@ -1,8 +1,8 @@
 Cluster,Nama,Jumlah kecamatan,Luas (Ha),% Luas,Rumah Tangga,% Rumah Tangga,Kepadatan Rumah Tangga (RT/Ha)
 0,Data Kosong,6,119793,3%,19212,1%,0.16
-1,Kepulauan,17,126847,3%,67717,3%,0.534
-2,Dominan Ekonomi Pertanian Berbasis Pohon,65,1588345,35%,457271,19%,0.288
-3,Dominan Ekonomi Industri dan Jasa,36,145226,3%,561495,24%,3.866
-4,Lumbung Pangan,111,1162856,26%,994481,42%,0.855
-5,Dominan Perdesaan Kaya Kehati,77,1414487,31%,261832,11%,0.185
+1,Wilayah Kepulauan,17,126847,3%,67717,3%,0.534
+2,Sentra Pertanian Berbasis Pohon,65,1588345,35%,457271,19%,0.288
+3,Sentra Ekonomi Industri dan Jasa,36,145226,3%,561495,24%,3.866
+4,Perdesaan Pertanian Pangan,111,1162856,26%,994481,42%,0.855
+5,Perdesaan Sumber Kehati,77,1414487,31%,261832,11%,0.185
 -,Total,312,4557553,100%,2362008,100%,0.518
