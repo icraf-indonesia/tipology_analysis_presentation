@@ -362,9 +362,9 @@ leaflet(clusters_bone_with_name) |>
 #| warning: false
 #| message: false
 source("R/functions.R")
-intisari_desk_kec <- readr::read_csv("data/interpretasi_tipologi_sulsel_id.csv") |> 
+intisari_desk_kec <- readr::read_csv("data/interpretasi_tipologi_bone.csv") |> 
   dplyr::mutate(`Kepadatan RT` = `Luas (Ha)`/`Rumah Tangga`) |> 
-  mutate(color_pal = c("#A65628","#E41A1C", "#377EB8",  "#4DAF4A","#FF7F00", "#984EA3", "black" ))
+  mutate(color_pal = c( "#377EB8","#E41A1C","#FF7F00" ,  "#4DAF4A", "black" ))
 
 fig_luas <- intisari_desk_kec |> 
   filter(Nama != "Total") |> 
