@@ -327,6 +327,12 @@ clusters_bone_with_name$label_content <- with(
 ) |> lapply(htmltools::HTML)
 
 
+centers <- clusters_bone_with_name |> sf::st_centroid( byid = TRUE)|> 
+  mutate(x = unlist(map(geometry,1)),
+    y = unlist(map(geometry,2)))
+centers$region <- row.names(clusters_bone_with_name)
+
+
 
 # Create the leaflet map with HTML-rendered labels
 leaflet(clusters_bone_with_name) |>
@@ -349,6 +355,9 @@ leaflet(clusters_bone_with_name) |>
     labelOptions = labelOptions(noHide = FALSE,
                                 direction = 'auto')
   ) |>
+  # addLabelOnlyMarkers(data = centers,
+  #                   lng = ~x, lat = ~y, label = ~nmkec,
+  #                   labelOptions = labelOptions(noHide = TRUE, direction = 'top', textOnly = TRUE)) |> 
   addLegend(pal = pal,
             values = ~ name,
             title = "Typology") |> 
