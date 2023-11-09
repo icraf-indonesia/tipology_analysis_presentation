@@ -39,11 +39,11 @@ Mengingat tingginya keanekaragaman lanskap di Kabupaten Bone, kami memfokuskan p
 ::: panel-tabset
 ## Deskripsi Kabupaten Bone
 
-Kabupaten Bone, yang terletak di sisi timur Provinsi Sulawesi Selatan, memiliki luas wilayah sebesar 4,559 kilometer persegi. Kabupaten ini memiliki dataran rendah yang subur. Terdapat kawasan berbukit dan pegunungan di sisi barat dan utara, serta dialiri oleh sungai Walanae. Daerah ini menerima hujan sekitar 3000 mm/tahun, yang merupakan ciri khas iklim hutan hujan tropis.
+Kabupaten Bone, yang terletak di sisi timur Provinsi Sulawesi Selatan, memiliki luas wilayah sebesar 4,559 kilometer persegi. Kabupaten ini memiliki dataran rendah yang subur. Terdapat kawasan berbukit dan pegunungan di sisi barat, serta dialiri oleh sungai Walanae. Daerah ini menerima hujan sekitar 3000 mm/tahun, yang merupakan ciri khas iklim hutan hujan tropis.
 
 Kabupaten Bone merupakan rumah bagi sekitar 813,188 penduduk berdasarkan data tahun 2022. Kabupaten ini memiliki tingkat ketimpangan ekonomi yang moderat, seperti yang tercermin dalam rasio Gini senilai 0.376 pada tahun 2022. Bone mencatatkan angka 67.01 untuk Indeks Pembangunan Manusia (IPM) di tahun yang sama.
 
-Produk Domestik Bruto (PDB) Atas Dasar Harga Berlakuuntuk Kabupaten Bone adalah 43.64 triliun Rupiah Indonesia pada tahun 2022. Hal ini menempatkan Bone sebagai Kabupaten dengan perputaran ekonomi terbesar kedua di Sulawesi Selatan.
+Produk Domestik Bruto (PDB, Atas Dasar Harga Berlaku) untuk Kabupaten Bone adalah 43.64 triliun Rupiah Indonesia pada tahun 2022. Hal ini menempatkan Bone sebagai Kabupaten dengan perputaran ekonomi terbesar kedua di Sulawesi Selatan.
 
 Pada tahun 2022, sektor pertanian di Kabupaten Bone memainkan peran penting dalam perekonomian lokal, dengan kontribusi sebesar 48.6% terhadap total Produk Domestik Regional Bruto (PDRB). Kabupaten ini terutama dikenal sebagai penghasil padi terkemuka di Sulawesi Selatan, dengan total produksi hampir mencapai 1.1 juta ton. Selain padi, produksi jagung juga mencapai angka yang signifikan, yaitu sekitar 442 ribu ton. Dalam konteks pertanian berbasis pohon, terdapat beberapa komoditas utama seperti kelapa dengan produksi 12.4 ribu ton, kakao sebanyak 6774 ton, dan kopi yang mencapai 5419 ton. Sektor ini menyerap tenaga kerja dari sekitar 110632 petani. Di samping itu, hutan di wilayah ini turut menyumbang sumber daya berharga seperti kayu dan rotan. Sektor perikanan laut juga memiliki peran penting dalam mendukung ekonomi lokal.
 
@@ -181,7 +181,7 @@ plot_3d
 ```{r Tabel Intisari Klaster Sulsel}
 library(gt)
 
-tabel_intisari <- readRDS("data/summary_table_sulsel.rds") |> 
+tabel_intisari <- readRDS("data/summary_table_bone.rds") |> 
   dplyr::select(-Kepulauan) |> 
   dplyr::mutate(variable = dplyr::case_when(
     variable == "annual_mean_prec" ~ "curah hujan rata-rata tahunan",
@@ -431,15 +431,15 @@ fig_RT
 
 -   Laju kehilangan tutupan hutan (2015-2020) tertinggi setelah tipologi sentra pertanian berbasis pohon. Paling dekat dengan lokasi bekas terbakar (2019).
 
--   Hampir 50% penduduk berada dalam 40% kelompok ekonomi terbawah. Akses terhadap fasilitas pendidikan dan kesehatan yang terbatas.
+-   Separuh dari rumah tangga di tipologi ini berada dalam 40% kelompok ekonomi terbawah. Akses terhadap fasilitas pendidikan dan kesehatan yang terbatas.
 
--   Aksesibilitas terhadap penghidupan berbasis lahan paling terbatas dibandingkan tipologi lainnya di Bone (kecuali kepulauan).
+-   Aksesibilitas terhadap penghidupan berbasis lahan paling terbatas dibandingkan tipologi lainnya di Bone.
 
 ### **2. Sentra Pertanian Berbasis Pohon/Perkebunan**
 
 **Karakteristik**
 
--   Tipologi dengan luas tertinggi (11.9% dari total luas daratan Kabupaten Bone) & ditinggali oleh 8.4% rumah tangga.
+-   Tipologi dengan luas 11.9% dari total luas daratan Kabupaten Bone & ditinggali oleh 8.4% rumah tangga.
 
 -   Tutupan lahan dominan dengan kelas-kelas pertanian berbasis pohon dan perkebunan.
 
@@ -465,7 +465,7 @@ fig_RT
 
 -   Laju kehilangan tutupan hutan (2015-2020) paling tinggi dibanding tipologi lainnya.
 
--   Sekitar 1/3 penduduk berada dalam 40% kelompok ekonomi terbawah.
+-   Sekitar 4 dari 10 rumah tangga berada dalam 40% kelompok ekonomi terbawah.
 
 ### **3. Perdesaan Pertanian Pangan**
 
@@ -487,11 +487,11 @@ fig_RT
 
 -   Terletak di dataran rendah; kenaikan suhu 1,41°C sangat mempengaruhi daerah yang sudah hangat ini.
 
--   Diperkirakan akan mengalami penurunan curah hujan terbesar (-84,31 mm) di antara tipologi, menjadikannya paling rentan terhadap kekeringan.
+-   Diperkirakan akan mengalami penurunan curah hujan tinggi (-130,57 mm) di antara tipologi lainnya. Dengan indeks kekeringan 0.13, menjadikannya paling rentan terhadap kekeringan.
 
 -   Risiko banjir tinggi, terutama di musim hujan. Selain itu sisa tutupan pohon (termasuk hutan) yang relatif sedikit.
 
--   Jumlah rumah tangga yang tinggi namun dengan lebih dari sepertiganya termasuk dalam 40% kelompok ekonomi terbawah.
+-   4 dari 10 Rumah Tangga di tipologi ini termasuk dalam 40% kelompok ekonomi terbawah.
 
 ### **4. Sentra Industri dan Jasa**
 
@@ -505,7 +505,7 @@ fig_RT
 
 -   Akses mudah ke fasilitas kesehatan, supermarket, universitas, dan rumah sakit. Namun, setiap unit melayani sejumlah besar rumah tangga.
 
--   Hanya 15,1% rumah tangga yang termasuk dalam 40% kelompok ekonomi terbawah.
+-   Hanya 15,23% rumah tangga yang termasuk dalam 40% kelompok ekonomi terbawah.
 
 **Tantangan Utama**
 
@@ -513,7 +513,7 @@ fig_RT
 
 <!-- -->
 
--   Suhu saat ini paling hangat dibandingkan dengan daerah lain; kenaikan suhu 1,43°C sangat mempengaruhi penduduk kurang mampu di lokasi ini.
+-   Suhu saat ini paling hangat dibandingkan dengan daerah lain (27.13 °C); kenaikan suhu 1,41°C sangat mempengaruhi penduduk kurang mampu di lokasi ini.
 
 -   Risiko banjir tertinggi dibanding tipologi lainnya, mengingat banyak lokasinya berada di dekat sungai.
 :::
