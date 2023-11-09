@@ -39,13 +39,13 @@ Mengingat tingginya keanekaragaman lanskap di Kabupaten Bone, kami memfokuskan p
 ::: panel-tabset
 ## Deskripsi Kabupaten Bone
 
-Provinsi Sulawesi Selatan, yang terletak di semenanjung bagian selatan pulau Sulawesi, Indonesia, memiliki luas wilayah sebesar 46.717 kilometer persegi. Provinsi ini dicirikan dengan rangkaian pegunungan berapi dari utara ke selatan dan dipisahkan oleh lembah Danau Tempe di bagian tengahnya. Iklim di daerah ini didominasi dengan curah hujan yang tinggi sepanjang tahun, yang merupakan ciri khas iklim hutan hujan tropis.
+Kabupaten Bone, yang terletak di sisi timur Provinsi Sulawesi Selatan, memiliki luas wilayah sebesar 4,559 kilometer persegi. Kabupaten ini memiliki dataran rendah yang subur. Terdapat kawasan berbukit dan pegunungan di sisi barat dan utara, serta dialiri oleh sungai Walanae. Daerah ini menerima hujan sekitar 3000 mm/tahun, yang merupakan ciri khas iklim hutan hujan tropis.
 
-Sulawesi Selatan merupakan rumah bagi sekitar 8,851 juta penduduk berdasarkan data tahun 2019. Provinsi ini memiliki tingkat ketimpangan ekonomi yang moderat, seperti yang tercermin dalam rasio Gini untuk setiap distriknya, yang berkisar antara 0.32 hingga 0.40 pada tahun 2022. Provinsi ini mencatatkan angka 7.22 pada Indeks Pembangunan Manusia (IPM) di tahun yang sama.
+Kabupaten Bone merupakan rumah bagi sekitar 813,188 penduduk berdasarkan data tahun 2022. Kabupaten ini memiliki tingkat ketimpangan ekonomi yang moderat, seperti yang tercermin dalam rasio Gini senilai 0.376 pada tahun 2022. Bone mencatatkan angka 67.01 untuk Indeks Pembangunan Manusia (IPM) di tahun yang sama.
 
-Produk Domestik Bruto (PDB) Sulawesi Selatan sekitar 605,145 miliar Rupiah Indonesia pada tahun 2022. Hal ini menempatkan Sulawesi Selatan sebagai ekonomi terbesar kesembilan di antara provinsi-provinsi di Indonesia.
+Produk Domestik Bruto (PDB) Atas Dasar Harga Berlakuuntuk Kabupaten Bone adalah 43.64 triliun Rupiah Indonesia pada tahun 2022. Hal ini menempatkan Bone sebagai Kabupaten dengan perputaran ekonomi terbesar kedua di Sulawesi Selatan.
 
-Pertanian memiliki peran penting dalam perekonomian provinsi, dengan diperkirakan satu juta petani beroperasi di Sulawesi Selatan, menurut Survei Pertanian Antar Sensus (SUTAS) tahun 2018 yang dilakukan oleh Badan Pusat Statistik (BPS). Produk pertanian utama meliputi padi, jagung, kopra (daging kelapa kering), kopi, rempah-rempah, minyak sayur, tebu, kedelai, dan ubi jalar. Hutan di kawasan ini menghasilkan sumber daya yang berharga seperti kayu jati dan rotan, dan perikanan laut dalam juga memberikan kontribusi terhadap ekonomi lokal.
+Pada tahun 2022, sektor pertanian di Kabupaten Bone memainkan peran penting dalam perekonomian lokal, dengan kontribusi sebesar 48.6% terhadap total Produk Domestik Regional Bruto (PDRB). Kabupaten ini terutama dikenal sebagai penghasil padi terkemuka di Sulawesi Selatan, dengan total produksi hampir mencapai 1.1 juta ton. Selain padi, produksi jagung juga mencapai angka yang signifikan, yaitu sekitar 442 ribu ton. Dalam konteks pertanian berbasis pohon, terdapat beberapa komoditas utama seperti kelapa dengan produksi 12.4 ribu ton, kakao sebanyak 6774 ton, dan kopi yang mencapai 5419 ton. Sektor ini menyerap tenaga kerja dari sekitar 110632 petani. Di samping itu, hutan di wilayah ini turut menyumbang sumber daya berharga seperti kayu dan rotan. Sektor perikanan laut juga memiliki peran penting dalam mendukung ekonomi lokal.
 
 ## Daftar Variabel
 
@@ -413,7 +413,7 @@ fig_RT
 
 **Karakteristik**
 
--   Tipologi dengan kepadatan rumah tangga (penduduk) terendah. Ditinggali 11% rumah tangga, dengan wilayah yang luas (31 % dari total luas daratan Provinsi Sulawesi Selatan)
+-   Tipologi dengan kepadatan rumah tangga (penduduk) terendah. Ditinggali 8.18% rumah tangga, dengan wilayah yang luas (28.3 % dari total luas daratan Kabupaten Bone)
 
 -   Wilayah pegunungan yang banyak bersinggungan dengan area lindung dan konservasi, benteng terakhir keanekaragaman hayati Wallacea yang unik.
 
@@ -433,13 +433,13 @@ fig_RT
 
 -   Hampir 50% penduduk berada dalam 40% kelompok ekonomi terbawah. Akses terhadap fasilitas pendidikan dan kesehatan yang terbatas.
 
--   Aksesibilitas terhadap penghidupan berbasis lahan paling terbatas dibandingkan tipologi lainnya di Sulawesi Selatan (kecuali kepulauan).
+-   Aksesibilitas terhadap penghidupan berbasis lahan paling terbatas dibandingkan tipologi lainnya di Bone (kecuali kepulauan).
 
 ### **2. Sentra Pertanian Berbasis Pohon/Perkebunan**
 
 **Karakteristik**
 
--   Tipologi dengan luas tertinggi (35% dari total luas daratan Provinsi Sulawesi Selatan) & ditinggali oleh 19% rumah tangga.
+-   Tipologi dengan luas tertinggi (11.9% dari total luas daratan Kabupaten Bone) & ditinggali oleh 8.4% rumah tangga.
 
 -   Tutupan lahan dominan dengan kelas-kelas pertanian berbasis pohon dan perkebunan.
 
@@ -475,7 +475,7 @@ fig_RT
 
 -   Kepemilikan lahan petani kecil paling tinggi dibanding tipologi lainnya.
 
--   Luas tipologi 26% dari total luas daratan Provinsi Sulawesi Selatan. **Rumah bagi** **42% rumah tangga** di Sulawesi Selatan.
+-   Luas tipologi 59.2% dari total luas daratan Kabupaten Bone. **Rumah bagi** **77.2% rumah tangga** di Bone.
 
 -   Tipologi dengan jarak paling jauh dari tutupan kelas hutan, namun relatif dekat dengan area bekas terbakar (2019).
 
@@ -497,7 +497,7 @@ fig_RT
 
 **Karakteristik**
 
--   Cakupan area terkecil (3%) namun ditinggali oleh 24% rumah tangga.
+-   Cakupan area terkecil (0.574%) namun ditinggali oleh 6.26% rumah tangga.
 
 -   Kegiatan ekonomi umumnya ditopang sektor jasa dan industri. Porsi lahan pertanian paling sedikit serta kepemilikan lahan petani kecil terendah kedua setelah daerah kepulauan.
 
