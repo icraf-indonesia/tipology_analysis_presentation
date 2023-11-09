@@ -351,7 +351,8 @@ leaflet(clusters_bone_with_name) |>
   ) |>
   addLegend(pal = pal,
             values = ~ name,
-            title = "Typology")
+            title = "Typology") |> 
+  addProviderTiles(providers$CyclOSM)
 
 ```
 
